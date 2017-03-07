@@ -1,0 +1,16 @@
+var simple_chart_config = {
+   "chart" : {
+      "connectors" : {
+         "type" : "step"
+      },
+      "container" : "#tree-simple",
+      "nodeAlign" : "BOTTOM",
+      "rootOrientation" : "WEST"
+   },
+   "nodeStructure" : {
+      "text" : {
+         "name" : "785 (ModemManager)"
+      }
+   }
+}
+;
