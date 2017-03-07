@@ -1,0 +1,1 @@
+g++ -std=c++11 -O3 "src/generator.cpp" -o "bin/generator" -lboost_system -lboost_filesystem
