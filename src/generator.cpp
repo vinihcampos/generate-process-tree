@@ -2,29 +2,52 @@
 #include <string>
 #include <vector>
 #include <map>
+#include <queue>
 #include <utility>
 #include <fstream>
 #include <boost/filesystem.hpp>
+#include "json/json.h"
 
 using namespace std;
 using namespace boost::filesystem;
+
+map<string, pair < string, vector< string > > > processes;
 
 bool is_number(const std::string & s){
     return !s.empty() && std::find_if(s.begin(),s.end(), [](char c) { return !std::isdigit(c); }) == s.end();
 }
 
+Json::Value populate_json(string pid){
+	Json::Value name;
+	name["name"] = Json::Value(pid);
+
+	Json::Value children;
+	if(!processes[pid].second.empty()){
+		for(int i = 0; i < processes[pid].second.size(); ++i){
+			children.append( populate_json( processes[pid].second[i] ) );
+		}
+	}
+	Json::Value structure;
+	structure["text"] = name;
+	
+	if(!children.isNull()) structure["children"] = children; 
+
+	return structure; 
+}
+
 int main(int argn, char ** argc){
 	
-	int ppid = 1;
+	int pid = 1;
 
 	if(argn > 1){
-		ppid = atoi(argc[1]);
+		pid = atoi(argc[1]);
 	}
+
+	cout << "PID: " << pid << endl;
 
 	path p("/proc");
 
     directory_iterator end_itr;
-    map<string, pair < string, vector< string > > > processes;
 
     for (directory_iterator itr(p); itr != end_itr; ++itr) {
 
@@ -49,13 +72,28 @@ int main(int argn, char ** argc){
     	}
     }
 
-    for(auto it = processes.begin(); it != processes.end(); it++){
+    /*for(auto it = processes.begin(); it != processes.end(); it++){
     	cout << "PROCESS " << it->second.first << " | PID (" << it->first << ")\n";
     	for(int i = 0; i < it->second.second.size(); ++i){
     		cout << it->second.second[i] << " ";
     	}
     	cout << endl;
-    }
+	}*/
+
+    Json::Value tree;
+    Json::Value chartValue;
+    
+    chartValue["container"] = Json::Value("#tree-simple");
+
+    tree["chart"] = chartValue;
+    tree["nodeStructure"] = populate_json(to_string(pid));
+
+    //-------- Writing JSON ------------//
+    Json::StyledWriter writer;
+
+    std::ofstream ofl("json/tree.json");
+    ofl << writer.write(tree);
+    ofl.close();
 
 	return 0;
 }
