@@ -56,17 +56,33 @@ int main(int argn, char ** argc){
     		ifstream file(itr->path().string() + "/stat", ifstream::in);
     		std::vector<string> parsed(std::istream_iterator<string>(file), {});
 
-    		if( processes.find(  parsed[0] )  == processes.end()){
-    			processes.insert( make_pair( parsed[0] , make_pair( parsed[1], set<string>() ) ) );
+    		string PID = "", NAME = "", PPID = "";
+    		int counter = 1;
+    		for(int i = 0; i < parsed.size(); ++i){
+    			if((counter == 1 || counter == 3) && is_number(parsed[i])){
+    				counter == 1 ? PID = parsed[i] : PPID = parsed[i];
+    				counter++;
+    			}else if(counter == 2 && !is_number(parsed[i])){
+    				while(parsed[i][parsed[i].size()-1] != ')'){
+    					NAME += parsed[i++] + " "; 
+    				}
+    				NAME += parsed[i];
+    				counter++;
+    			}
+    			if(counter > 3) break;
+    		} 
+
+    		if( processes.find(  PID )  == processes.end()){
+    			processes.insert( make_pair( PID , make_pair( NAME, set<string>() ) ) );
     		}else{
-    			processes[  parsed[0] ].first = parsed[1];
+    			processes[  PID ].first = NAME;
     		}
 
-    		if(parsed[3].compare("0")){
-    			if(processes.find(  parsed[3] )  == processes.end()){
-	    			processes.insert( make_pair( parsed[3] , make_pair( "", set<string>() ) ) );
+    		if(PPID.compare("0")){
+    			if(processes.find(  PPID )  == processes.end()){
+	    			processes.insert( make_pair( PPID , make_pair( "", set<string>() ) ) );
 	    		}
-	    		processes[ parsed[3] ].second.insert( parsed[0] );
+	    		processes[ PPID ].second.insert( PID );
     		}
 
             if(exists(itr->path().string() + "/task")){
@@ -84,25 +100,40 @@ int main(int argn, char ** argc){
         	//cout << itr->path().string() << endl;
 
         	if( is_directory( itr->path() ) && is_number(itr->path().leaf().string()) ){
-
         		//cout << "Number path: " << itr->path().string() << endl;
 
 	    		ifstream file(itr->path().string() + "/stat", ifstream::in);
 	    		std::vector<string> parsed(std::istream_iterator<string>(file), {});
 
-	    		//cout << "PID ("<<parsed[0]<<") | NAME ("<<parsed[1]<<") | PPID ("<<parsed[3]<<")\n";
+	    		string PID = "", NAME = "", PPID = "";
+	    		int counter = 1;
+	    		for(int i = 0; i < parsed.size(); ++i){
+	    			if((counter == 1 || counter == 3) && is_number(parsed[i])){
+	    				counter == 1 ? PID = parsed[i] : PPID = parsed[i];
+	    				counter++;
+	    			}else if(counter == 2 && !is_number(parsed[i])){
+	    				while(parsed[i][parsed[i].size()-1] != ')'){
+	    					NAME += parsed[i++] + " "; 
+	    				}
+	    				NAME += parsed[i];
+	    				counter++;
+	    			}
+	    			if(counter > 3) break;
+	    		} 
 
-	    		if( processes.find(  parsed[0] )  == processes.end()){
-	    			processes.insert( make_pair( parsed[0] , make_pair( parsed[1], set<string>() ) ) );
+	    		//cout << "PID ("<<PID<<") | NAME ("<<NAME<<") | PPID ("<<PPID<<")\n";
+
+	    		if( processes.find( PID )  == processes.end()){
+	    			processes.insert( make_pair( PID , make_pair( NAME, set<string>() ) ) );
 	    		}else{
-	    			processes[  parsed[0] ].first = parsed[1];
+	    			processes[ PID ].first = NAME;
 	    		}
 
-	    		if(parsed[3].compare("0")){
-	    			if(processes.find(  parsed[3] )  == processes.end()){
-		    			processes.insert( make_pair( parsed[3] , make_pair( "", set<string>() ) ) );
+	    		if(PPID.compare("0")){
+	    			if(processes.find(  PPID )  == processes.end()){
+		    			processes.insert( make_pair( PPID , make_pair( "", set<string>() ) ) );
 		    		}
-		    		processes[ parsed[3] ].second.insert( parsed[0] );
+		    		processes[ PPID ].second.insert( PID );
 	    		}
 
 	            if(exists(itr->path().string() + "/task")){            
