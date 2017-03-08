@@ -6,6 +6,7 @@
 #include <queue>
 #include <utility>
 #include <fstream>
+#include <sstream>
 #include <boost/filesystem.hpp>
 #include "json/json.h"
 
@@ -13,6 +14,7 @@ using namespace std;
 using namespace boost::filesystem;
 
 map<string, pair < string, set< string > > > processes;
+map<string, pair < string, int > > process_users;
 
 bool is_number(const std::string & s){
     return !s.empty() && std::find_if(s.begin(),s.end(), [](char c) { return !std::isdigit(c); }) == s.end();
@@ -36,6 +38,62 @@ Json::Value populate_json(string pid){
 	return structure; 
 }
 
+void identify_users(){
+	ifstream file("/etc/passwd", ifstream::in);
+	string input;
+
+	string name, id;
+
+	while(getline(file, input)){
+		std::istringstream ss(input);
+		std::string token;
+		int counter = 1;
+		while(getline(ss, token, ':')) {
+		    if(counter == 1) name = token;
+		    if(counter == 3) id = token;
+		    counter++;
+
+		    if(counter > 3) break;
+		}
+
+		process_users[id] = make_pair(name, 0);
+	}
+
+	file.close();
+	if(exists("/proc/self/status")){
+		file.open("/proc/self/status",ifstream::in);
+		string input;
+		int counter = 0;
+		while(getline(file, input)){
+			++counter;
+			if(counter == 8){
+				stringstream ss(input);
+				ss >> input;
+				ss >> input;
+				process_users[input].second++;
+			}				
+		}
+		file.close();
+	}
+
+	if(exists("/proc/thread-self/status")){
+		file.open("/proc/thread-self/status",ifstream::in);
+		string input;
+		int counter = 0;
+		while(getline(file, input)){
+			++counter;
+			if(counter == 8){
+				stringstream ss(input);
+				ss >> input;
+				ss >> input;
+				process_users[input].second++;
+			}				
+		}
+		file.close();
+	}
+	
+}
+
 int main(int argn, char ** argc){
 	
 	int pid = 1;
@@ -49,15 +107,36 @@ int main(int argn, char ** argc){
     directory_iterator end_itr;
 
     queue<string> directory_has_subprocesses;
+    
+    int n_processes = 2;
+    // Identifying users of system
+    identify_users();
 
     for (directory_iterator itr(p); itr != end_itr; ++itr) {
 
     	if( is_directory( itr->path() ) && is_number(itr->path().leaf().string()) ){
+    		n_processes++;
+
+    		// Counting process by user
+    		ifstream pu(itr->path().string() + "/status", ifstream::in);
+
+    		string input;
+			int counter = 0;
+			while(getline(pu, input)){
+				++counter;
+				if(counter == 8){
+					stringstream ss(input);
+					ss >> input;
+					ss >> input;
+					process_users[input].second++;
+				}				
+			}
+
     		ifstream file(itr->path().string() + "/stat", ifstream::in);
     		std::vector<string> parsed(std::istream_iterator<string>(file), {});
 
     		string PID = "", NAME = "", PPID = "";
-    		int counter = 1;
+    		counter = 1;
     		for(int i = 0; i < parsed.size(); ++i){
     			if((counter == 1 || counter == 3) && is_number(parsed[i])){
     				counter == 1 ? PID = parsed[i] : PPID = parsed[i];
@@ -140,8 +219,7 @@ int main(int argn, char ** argc){
 	                directory_has_subprocesses.push(itr->path().string() + "/task");
 	            }   		
 	    	}
-        }          
-                
+        }               
     }
 
     Json::Value tree;
@@ -162,6 +240,15 @@ int main(int argn, char ** argc){
     tree["chart"] = chartValue;
     
     tree["nodeStructure"] = populate_json(to_string(pid));
+    tree["totalProcesses"] = Json::Value(n_processes);
+
+    //Populate processes in json
+    Json::Value user;
+    for(auto it = process_users.begin(); it != process_users.end(); ++it){
+    	user["name"] = it->second.first;
+    	user["quantity"] = it->second.second;
+    	tree["processes"].append(user);
+    }
 
     //-------- Writing JSON ------------//
     Json::StyledWriter writer;
