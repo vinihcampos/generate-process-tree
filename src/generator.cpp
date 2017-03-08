@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <set>
 #include <map>
 #include <queue>
 #include <utility>
@@ -11,7 +12,7 @@
 using namespace std;
 using namespace boost::filesystem;
 
-map<string, pair < string, vector< string > > > processes;
+map<string, pair < string, set< string > > > processes;
 
 bool is_number(const std::string & s){
     return !s.empty() && std::find_if(s.begin(),s.end(), [](char c) { return !std::isdigit(c); }) == s.end();
@@ -23,8 +24,8 @@ Json::Value populate_json(string pid){
 
 	Json::Value children;
 	if(!processes[pid].second.empty()){
-		for(int i = 0; i < processes[pid].second.size(); ++i){
-			children.append( populate_json( processes[pid].second[i] ) );
+		for(auto it = processes[pid].second.begin(); it != processes[pid].second.end(); ++it){
+			children.append( populate_json( *it ) );
 		}
 	}
 	Json::Value structure;
@@ -43,8 +44,6 @@ int main(int argn, char ** argc){
 		pid = atoi(argc[1]);
 	}
 
-	cout << "PID: " << pid << endl;
-
 	path p("/proc");
 
     directory_iterator end_itr;
@@ -57,19 +56,17 @@ int main(int argn, char ** argc){
     		ifstream file(itr->path().string() + "/stat", ifstream::in);
     		std::vector<string> parsed(std::istream_iterator<string>(file), {});
 
-            cout <<"Init: " << itr->path().string() << "/stat" << endl;
-
     		if( processes.find(  parsed[0] )  == processes.end()){
-    			processes.insert( make_pair( parsed[0] , make_pair( parsed[1], vector<string>() ) ) );
+    			processes.insert( make_pair( parsed[0] , make_pair( parsed[1], set<string>() ) ) );
     		}else{
     			processes[  parsed[0] ].first = parsed[1];
     		}
 
     		if(parsed[3].compare("0")){
     			if(processes.find(  parsed[3] )  == processes.end()){
-	    			processes.insert( make_pair( parsed[3] , make_pair( "", vector<string>() ) ) );
+	    			processes.insert( make_pair( parsed[3] , make_pair( "", set<string>() ) ) );
 	    		}
-	    		processes[ parsed[3] ].second.push_back( parsed[0] );
+	    		processes[ parsed[3] ].second.insert( parsed[0] );
     		}
 
             if(exists(itr->path().string() + "/task")){
@@ -82,31 +79,38 @@ int main(int argn, char ** argc){
         string front = directory_has_subprocesses.front();
         directory_has_subprocesses.pop();
 
-        cout << front << endl;
+        for(directory_iterator itr(front); itr != end_itr; ++itr){
 
-        ifstream file(front + "/stat", ifstream::in);
-        std::vector<string> parsed(std::istream_iterator<string>(file), {});
+        	//cout << itr->path().string() << endl;
 
-        cout << "File: " << front << "/stat\n"; 
-        if(!parsed.empty()){
-            if( processes.find(  parsed[0] )  == processes.end()){
-                processes.insert( make_pair( parsed[0] , make_pair( parsed[1], vector<string>() ) ) );
-            }else{
-                processes[  parsed[0] ].first = parsed[1];
-            }
+        	if( is_directory( itr->path() ) && is_number(itr->path().leaf().string()) ){
 
-            if(parsed[3].compare("0")){
-                if(processes.find(  parsed[3] )  == processes.end()){
-                    processes.insert( make_pair( parsed[3] , make_pair( "", vector<string>() ) ) );
-                }
-                processes[ parsed[3] ].second.push_back( parsed[0] );
-            }
+        		//cout << "Number path: " << itr->path().string() << endl;
 
-            if(exists(front + "/task")){            
-                cout << "Queue: " << front << "/task\n";
-                directory_has_subprocesses.push(front + "/task");
-            }
-        }        
+	    		ifstream file(itr->path().string() + "/stat", ifstream::in);
+	    		std::vector<string> parsed(std::istream_iterator<string>(file), {});
+
+	    		//cout << "PID ("<<parsed[0]<<") | NAME ("<<parsed[1]<<") | PPID ("<<parsed[3]<<")\n";
+
+	    		if( processes.find(  parsed[0] )  == processes.end()){
+	    			processes.insert( make_pair( parsed[0] , make_pair( parsed[1], set<string>() ) ) );
+	    		}else{
+	    			processes[  parsed[0] ].first = parsed[1];
+	    		}
+
+	    		if(parsed[3].compare("0")){
+	    			if(processes.find(  parsed[3] )  == processes.end()){
+		    			processes.insert( make_pair( parsed[3] , make_pair( "", set<string>() ) ) );
+		    		}
+		    		processes[ parsed[3] ].second.insert( parsed[0] );
+	    		}
+
+	            if(exists(itr->path().string() + "/task")){            
+	                directory_has_subprocesses.push(itr->path().string() + "/task");
+	            }   		
+	    	}
+        }          
+                
     }
 
     Json::Value tree;
