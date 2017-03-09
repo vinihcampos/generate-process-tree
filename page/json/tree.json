@@ -1,4 +1,4 @@
-var reload_time = 3000;
+var reload_time = 60000;
 var simple_chart_config = {
    "chart" : {
       "connectors" : {
@@ -20,11 +20,31 @@ var simple_chart_config = {
          {
             "connectors" : {
                "style" : {
-                  "stroke" : "#a730b2"
+                  "stroke" : "#e56288"
                }
             },
             "text" : {
-               "name" : "1008 (accounts-daemon)"
+               "name" : "1040 (sshd)"
+            }
+         },
+         {
+            "connectors" : {
+               "style" : {
+                  "stroke" : "#6ae509"
+               }
+            },
+            "text" : {
+               "name" : "1492 (systemd-logind)"
+            }
+         },
+         {
+            "connectors" : {
+               "style" : {
+                  "stroke" : "#6db97e"
+               }
+            },
+            "text" : {
+               "name" : "1493 (accounts-daemon)"
             }
          },
          {
@@ -32,125 +52,11 @@ var simple_chart_config = {
                {
                   "connectors" : {
                      "style" : {
-                        "stroke" : "#a69b76"
+                        "stroke" : "#1e13b4"
                      }
                   },
                   "text" : {
-                     "name" : "1060 (avahi-daemon)"
-                  }
-               }
-            ],
-            "connectors" : {
-               "style" : {
-                  "stroke" : "#2c8c5a"
-               }
-            },
-            "text" : {
-               "name" : "1009 (avahi-daemon)"
-            }
-         },
-         {
-            "connectors" : {
-               "style" : {
-                  "stroke" : "#9c3313"
-               }
-            },
-            "text" : {
-               "name" : "1029 (cron)"
-            }
-         },
-         {
-            "connectors" : {
-               "style" : {
-                  "stroke" : "#9ed0f4"
-               }
-            },
-            "text" : {
-               "name" : "1032 (dbus-daemon)"
-            }
-         },
-         {
-            "connectors" : {
-               "style" : {
-                  "stroke" : "#125478"
-               }
-            },
-            "text" : {
-               "name" : "1078 (cups-browsed)"
-            }
-         },
-         {
-            "children" : [
-               {
-                  "connectors" : {
-                     "style" : {
-                        "stroke" : "#cd5216"
-                     }
-                  },
-                  "text" : {
-                     "name" : "1767 (dhclient)"
-                  }
-               },
-               {
-                  "connectors" : {
-                     "style" : {
-                        "stroke" : "#e1cc2f"
-                     }
-                  },
-                  "text" : {
-                     "name" : "1849 (dnsmasq)"
-                  }
-               }
-            ],
-            "connectors" : {
-               "style" : {
-                  "stroke" : "#9e248c"
-               }
-            },
-            "text" : {
-               "name" : "1079 (NetworkManager)"
-            }
-         },
-         {
-            "connectors" : {
-               "style" : {
-                  "stroke" : "#0f6c58"
-               }
-            },
-            "text" : {
-               "name" : "1081 (snapd)"
-            }
-         },
-         {
-            "connectors" : {
-               "style" : {
-                  "stroke" : "#391408"
-               }
-            },
-            "text" : {
-               "name" : "1172 (irqbalance)"
-            }
-         },
-         {
-            "connectors" : {
-               "style" : {
-                  "stroke" : "#6bbba4"
-               }
-            },
-            "text" : {
-               "name" : "1174 (polkitd)"
-            }
-         },
-         {
-            "children" : [
-               {
-                  "connectors" : {
-                     "style" : {
-                        "stroke" : "#e16731"
-                     }
-                  },
-                  "text" : {
-                     "name" : "1206 (Xorg)"
+                     "name" : "1517 (Xorg)"
                   }
                },
                {
@@ -160,81 +66,51 @@ var simple_chart_config = {
                            {
                               "connectors" : {
                                  "style" : {
-                                    "stroke" : "#bb04e4"
+                                    "stroke" : "#f50649"
                                  }
                               },
                               "text" : {
-                                 "name" : "1646 (upstart-udev-br)"
+                                 "name" : "1965 (upstart-udev-br)"
                               }
                            },
                            {
                               "connectors" : {
                                  "style" : {
-                                    "stroke" : "#4e23b5"
+                                    "stroke" : "#698774"
                                  }
                               },
                               "text" : {
-                                 "name" : "1659 (dbus-daemon)"
+                                 "name" : "1979 (dbus-daemon)"
                               }
                            },
                            {
                               "connectors" : {
                                  "style" : {
-                                    "stroke" : "#433589"
+                                    "stroke" : "#1aa1c8"
                                  }
                               },
                               "text" : {
-                                 "name" : "1671 (window-stack-br)"
+                                 "name" : "1991 (window-stack-br)"
                               }
                            },
                            {
                               "connectors" : {
                                  "style" : {
-                                    "stroke" : "#3b82dc"
+                                    "stroke" : "#661f97"
                                  }
                               },
                               "text" : {
-                                 "name" : "1703 (upstart-dbus-br)"
+                                 "name" : "2023 (upstart-dbus-br)"
                               }
                            },
                            {
                               "connectors" : {
                                  "style" : {
-                                    "stroke" : "#516529"
+                                    "stroke" : "#08ba11"
                                  }
                               },
                               "text" : {
-                                 "name" : "1706 (upstart-dbus-br)"
-                              }
-                           },
-                           {
-                              "connectors" : {
-                                 "style" : {
-                                    "stroke" : "#0004cc"
-                                 }
-                              },
-                              "text" : {
-                                 "name" : "1714 (upstart-file-br)"
-                              }
-                           },
-                           {
-                              "connectors" : {
-                                 "style" : {
-                                    "stroke" : "#8d9339"
-                                 }
-                              },
-                              "text" : {
-                                 "name" : "1768 (gpg-agent)"
-                              }
-                           },
-                           {
-                              "connectors" : {
-                                 "style" : {
-                                    "stroke" : "#65cc4d"
-                                 }
-                              },
-                              "text" : {
-                                 "name" : "1780 (bamfdaemon)"
+                                 "name" : "2025 (upstart-dbus-br)"
                               }
                            },
                            {
@@ -242,61 +118,685 @@ var simple_chart_config = {
                                  {
                                     "connectors" : {
                                        "style" : {
-                                          "stroke" : "#6e3888"
+                                          "stroke" : "#9041ed"
                                        }
                                     },
                                     "text" : {
-                                       "name" : "1787 (dbus-daemon)"
+                                       "name" : "2066 (ibus-dconf)"
+                                    }
+                                 },
+                                 {
+                                    "connectors" : {
+                                       "style" : {
+                                          "stroke" : "#0727cf"
+                                       }
+                                    },
+                                    "text" : {
+                                       "name" : "2067 (ibus-ui-gtk3)"
+                                    }
+                                 },
+                                 {
+                                    "connectors" : {
+                                       "style" : {
+                                          "stroke" : "#0f11b5"
+                                       }
+                                    },
+                                    "text" : {
+                                       "name" : "2098 (ibus-engine-sim)"
                                     }
                                  }
                               ],
                               "connectors" : {
                                  "style" : {
-                                    "stroke" : "#921af0"
+                                    "stroke" : "#19fe6f"
                                  }
                               },
                               "text" : {
-                                 "name" : "1782 (at-spi-bus-laun)"
+                                 "name" : "2027 (ibus-daemon)"
                               }
                            },
                            {
                               "connectors" : {
                                  "style" : {
-                                    "stroke" : "#435674"
+                                    "stroke" : "#171d02"
                                  }
                               },
                               "text" : {
-                                 "name" : "1791 (at-spi2-registr)"
+                                 "name" : "2038 (upstart-file-br)"
                               }
                            },
                            {
                               "connectors" : {
                                  "style" : {
-                                    "stroke" : "#28a497"
+                                    "stroke" : "#cb1308"
                                  }
                               },
                               "text" : {
-                                 "name" : "1794 (gvfsd)"
+                                 "name" : "2048 (gpg-agent)"
                               }
                            },
                            {
                               "connectors" : {
                                  "style" : {
-                                    "stroke" : "#5de84d"
+                                    "stroke" : "#94fc0f"
                                  }
                               },
                               "text" : {
-                                 "name" : "1801 (gvfsd-fuse)"
+                                 "name" : "2052 (gvfsd)"
                               }
                            },
                            {
                               "connectors" : {
                                  "style" : {
-                                    "stroke" : "#67a34f"
+                                    "stroke" : "#091731"
                                  }
                               },
                               "text" : {
-                                 "name" : "18159 (gvfsd-network)"
+                                 "name" : "2057 (gvfsd-fuse)"
+                              }
+                           },
+                           {
+                              "connectors" : {
+                                 "style" : {
+                                    "stroke" : "#d1fc50"
+                                 }
+                              },
+                              "text" : {
+                                 "name" : "2069 (ibus-x11)"
+                              }
+                           },
+                           {
+                              "connectors" : {
+                                 "style" : {
+                                    "stroke" : "#e9060c"
+                                 }
+                              },
+                              "text" : {
+                                 "name" : "2080 (bamfdaemon)"
+                              }
+                           },
+                           {
+                              "children" : [
+                                 {
+                                    "connectors" : {
+                                       "style" : {
+                                          "stroke" : "#fa96cc"
+                                       }
+                                    },
+                                    "text" : {
+                                       "name" : "2093 (dbus-daemon)"
+                                    }
+                                 }
+                              ],
+                              "connectors" : {
+                                 "style" : {
+                                    "stroke" : "#681d74"
+                                 }
+                              },
+                              "text" : {
+                                 "name" : "2084 (at-spi-bus-laun)"
+                              }
+                           },
+                           {
+                              "connectors" : {
+                                 "style" : {
+                                    "stroke" : "#382d85"
+                                 }
+                              },
+                              "text" : {
+                                 "name" : "2095 (at-spi2-registr)"
+                              }
+                           },
+                           {
+                              "connectors" : {
+                                 "style" : {
+                                    "stroke" : "#6dc504"
+                                 }
+                              },
+                              "text" : {
+                                 "name" : "2126 (hud-service)"
+                              }
+                           },
+                           {
+                              "connectors" : {
+                                 "style" : {
+                                    "stroke" : "#5ddc22"
+                                 }
+                              },
+                              "text" : {
+                                 "name" : "2128 (unity-settings-)"
+                              }
+                           },
+                           {
+                              "children" : [
+                                 {
+                                    "connectors" : {
+                                       "style" : {
+                                          "stroke" : "#5f28b4"
+                                       }
+                                    },
+                                    "text" : {
+                                       "name" : "2281 (gnome-software)"
+                                    }
+                                 },
+                                 {
+                                    "connectors" : {
+                                       "style" : {
+                                          "stroke" : "#e7bc31"
+                                       }
+                                    },
+                                    "text" : {
+                                       "name" : "2283 (unity-fallback-)"
+                                    }
+                                 },
+                                 {
+                                    "connectors" : {
+                                       "style" : {
+                                          "stroke" : "#7645c7"
+                                       }
+                                    },
+                                    "text" : {
+                                       "name" : "2284 (nm-applet)"
+                                    }
+                                 },
+                                 {
+                                    "connectors" : {
+                                       "style" : {
+                                          "stroke" : "#a796c5"
+                                       }
+                                    },
+                                    "text" : {
+                                       "name" : "2285 (nautilus)"
+                                    }
+                                 },
+                                 {
+                                    "connectors" : {
+                                       "style" : {
+                                          "stroke" : "#78804b"
+                                       }
+                                    },
+                                    "text" : {
+                                       "name" : "2287 (polkit-gnome-au)"
+                                    }
+                                 },
+                                 {
+                                    "connectors" : {
+                                       "style" : {
+                                          "stroke" : "#047b61"
+                                       }
+                                    },
+                                    "text" : {
+                                       "name" : "2481 (zeitgeist-datah)"
+                                    }
+                                 },
+                                 {
+                                    "connectors" : {
+                                       "style" : {
+                                          "stroke" : "#d0637f"
+                                       }
+                                    },
+                                    "text" : {
+                                       "name" : "2687 (update-notifier)"
+                                    }
+                                 },
+                                 {
+                                    "connectors" : {
+                                       "style" : {
+                                          "stroke" : "#c49b2c"
+                                       }
+                                    },
+                                    "text" : {
+                                       "name" : "3302 (deja-dup-monito)"
+                                    }
+                                 }
+                              ],
+                              "connectors" : {
+                                 "style" : {
+                                    "stroke" : "#ca0af1"
+                                 }
+                              },
+                              "text" : {
+                                 "name" : "2135 (gnome-session-b)"
+                              }
+                           },
+                           {
+                              "connectors" : {
+                                 "style" : {
+                                    "stroke" : "#ce674e"
+                                 }
+                              },
+                              "text" : {
+                                 "name" : "2140 (unity-panel-ser)"
+                              }
+                           },
+                           {
+                              "connectors" : {
+                                 "style" : {
+                                    "stroke" : "#f04676"
+                                 }
+                              },
+                              "text" : {
+                                 "name" : "2169 (indicator-messa)"
+                              }
+                           },
+                           {
+                              "connectors" : {
+                                 "style" : {
+                                    "stroke" : "#26adb2"
+                                 }
+                              },
+                              "text" : {
+                                 "name" : "2171 (indicator-bluet)"
+                              }
+                           },
+                           {
+                              "connectors" : {
+                                 "style" : {
+                                    "stroke" : "#d6a477"
+                                 }
+                              },
+                              "text" : {
+                                 "name" : "2177 (indicator-power)"
+                              }
+                           },
+                           {
+                              "connectors" : {
+                                 "style" : {
+                                    "stroke" : "#9f4c0e"
+                                 }
+                              },
+                              "text" : {
+                                 "name" : "2179 (indicator-datet)"
+                              }
+                           },
+                           {
+                              "connectors" : {
+                                 "style" : {
+                                    "stroke" : "#e4448f"
+                                 }
+                              },
+                              "text" : {
+                                 "name" : "2181 (indicator-keybo)"
+                              }
+                           },
+                           {
+                              "connectors" : {
+                                 "style" : {
+                                    "stroke" : "#30c78a"
+                                 }
+                              },
+                              "text" : {
+                                 "name" : "2182 (indicator-sound)"
+                              }
+                           },
+                           {
+                              "connectors" : {
+                                 "style" : {
+                                    "stroke" : "#9119ee"
+                                 }
+                              },
+                              "text" : {
+                                 "name" : "2183 (indicator-print)"
+                              }
+                           },
+                           {
+                              "connectors" : {
+                                 "style" : {
+                                    "stroke" : "#90dd0a"
+                                 }
+                              },
+                              "text" : {
+                                 "name" : "2184 (indicator-sessi)"
+                              }
+                           },
+                           {
+                              "connectors" : {
+                                 "style" : {
+                                    "stroke" : "#bca893"
+                                 }
+                              },
+                              "text" : {
+                                 "name" : "2202 (indicator-appli)"
+                              }
+                           },
+                           {
+                              "connectors" : {
+                                 "style" : {
+                                    "stroke" : "#ae787a"
+                                 }
+                              },
+                              "text" : {
+                                 "name" : "2225 (evolution-sourc)"
+                              }
+                           },
+                           {
+                              "connectors" : {
+                                 "style" : {
+                                    "stroke" : "#7ce8c1"
+                                 }
+                              },
+                              "text" : {
+                                 "name" : "2228 (pulseaudio)"
+                              }
+                           },
+                           {
+                              "connectors" : {
+                                 "style" : {
+                                    "stroke" : "#728eee"
+                                 }
+                              },
+                              "text" : {
+                                 "name" : "2240 (dconf-service)"
+                              }
+                           },
+                           {
+                              "connectors" : {
+                                 "style" : {
+                                    "stroke" : "#256693"
+                                 }
+                              },
+                              "text" : {
+                                 "name" : "2300 (gvfs-udisks2-vo)"
+                              }
+                           },
+                           {
+                              "connectors" : {
+                                 "style" : {
+                                    "stroke" : "#9c0660"
+                                 }
+                              },
+                              "text" : {
+                                 "name" : "2310 (compiz)"
+                              }
+                           },
+                           {
+                              "children" : [
+                                 {
+                                    "connectors" : {
+                                       "style" : {
+                                          "stroke" : "#2b6a24"
+                                       }
+                                    },
+                                    "text" : {
+                                       "name" : "2371 (evolution-calen)"
+                                    }
+                                 },
+                                 {
+                                    "connectors" : {
+                                       "style" : {
+                                          "stroke" : "#ba9aec"
+                                       }
+                                    },
+                                    "text" : {
+                                       "name" : "2389 (evolution-calen)"
+                                    }
+                                 }
+                              ],
+                              "connectors" : {
+                                 "style" : {
+                                    "stroke" : "#c4ab85"
+                                 }
+                              },
+                              "text" : {
+                                 "name" : "2327 (evolution-calen)"
+                              }
+                           },
+                           {
+                              "connectors" : {
+                                 "style" : {
+                                    "stroke" : "#33bc63"
+                                 }
+                              },
+                              "text" : {
+                                 "name" : "2330 (gvfs-gphoto2-vo)"
+                              }
+                           },
+                           {
+                              "connectors" : {
+                                 "style" : {
+                                    "stroke" : "#3e798c"
+                                 }
+                              },
+                              "text" : {
+                                 "name" : "2339 (gvfs-goa-volume)"
+                              }
+                           },
+                           {
+                              "connectors" : {
+                                 "style" : {
+                                    "stroke" : "#d1a884"
+                                 }
+                              },
+                              "text" : {
+                                 "name" : "2344 (gvfs-mtp-volume)"
+                              }
+                           },
+                           {
+                              "connectors" : {
+                                 "style" : {
+                                    "stroke" : "#4da4ec"
+                                 }
+                              },
+                              "text" : {
+                                 "name" : "2349 (gvfs-afc-volume)"
+                              }
+                           },
+                           {
+                              "connectors" : {
+                                 "style" : {
+                                    "stroke" : "#8e187c"
+                                 }
+                              },
+                              "text" : {
+                                 "name" : "2380 (gvfsd-trash)"
+                              }
+                           },
+                           {
+                              "children" : [
+                                 {
+                                    "connectors" : {
+                                       "style" : {
+                                          "stroke" : "#7dbce2"
+                                       }
+                                    },
+                                    "text" : {
+                                       "name" : "2400 (evolution-addre)"
+                                    }
+                                 }
+                              ],
+                              "connectors" : {
+                                 "style" : {
+                                    "stroke" : "#915a68"
+                                 }
+                              },
+                              "text" : {
+                                 "name" : "2387 (evolution-addre)"
+                              }
+                           },
+                           {
+                              "connectors" : {
+                                 "style" : {
+                                    "stroke" : "#f105d2"
+                                 }
+                              },
+                              "text" : {
+                                 "name" : "2418 (gvfsd-burn)"
+                              }
+                           },
+                           {
+                              "children" : [
+                                 {
+                                    "connectors" : {
+                                       "style" : {
+                                          "stroke" : "#953fec"
+                                       }
+                                    },
+                                    "text" : {
+                                       "name" : "2494 (zeitgeist-daemo)"
+                                    }
+                                 }
+                              ],
+                              "connectors" : {
+                                 "style" : {
+                                    "stroke" : "#820418"
+                                 }
+                              },
+                              "text" : {
+                                 "name" : "2490 (sh)"
+                              }
+                           },
+                           {
+                              "connectors" : {
+                                 "style" : {
+                                    "stroke" : "#0838d4"
+                                 }
+                              },
+                              "text" : {
+                                 "name" : "24917 (unity-scope-hom)"
+                              }
+                           },
+                           {
+                              "connectors" : {
+                                 "style" : {
+                                    "stroke" : "#eb76ce"
+                                 }
+                              },
+                              "text" : {
+                                 "name" : "24928 (unity-scope-loa)"
+                              }
+                           },
+                           {
+                              "connectors" : {
+                                 "style" : {
+                                    "stroke" : "#78c7f6"
+                                 }
+                              },
+                              "text" : {
+                                 "name" : "24930 (unity-files-dae)"
+                              }
+                           },
+                           {
+                              "connectors" : {
+                                 "style" : {
+                                    "stroke" : "#7c159b"
+                                 }
+                              },
+                              "text" : {
+                                 "name" : "24977 (unity-music-dae)"
+                              }
+                           },
+                           {
+                              "children" : [
+                                 {
+                                    "connectors" : {
+                                       "style" : {
+                                          "stroke" : "#69a3b3"
+                                       }
+                                    },
+                                    "text" : {
+                                       "name" : "24996 (sd_cicero)"
+                                    }
+                                 }
+                              ],
+                              "connectors" : {
+                                 "style" : {
+                                    "stroke" : "#e5a171"
+                                 }
+                              },
+                              "text" : {
+                                 "name" : "24995 (sd_cicero)"
+                              }
+                           },
+                           {
+                              "connectors" : {
+                                 "style" : {
+                                    "stroke" : "#48334b"
+                                 }
+                              },
+                              "text" : {
+                                 "name" : "24999 (sd_dummy)"
+                              }
+                           },
+                           {
+                              "connectors" : {
+                                 "style" : {
+                                    "stroke" : "#b0a450"
+                                 }
+                              },
+                              "text" : {
+                                 "name" : "25002 (sd_espeak)"
+                              }
+                           },
+                           {
+                              "connectors" : {
+                                 "style" : {
+                                    "stroke" : "#033a8f"
+                                 }
+                              },
+                              "text" : {
+                                 "name" : "25007 (sd_generic)"
+                              }
+                           },
+                           {
+                              "connectors" : {
+                                 "style" : {
+                                    "stroke" : "#6f3d93"
+                                 }
+                              },
+                              "text" : {
+                                 "name" : "25010 (speech-dispatch)"
+                              }
+                           },
+                           {
+                              "connectors" : {
+                                 "style" : {
+                                    "stroke" : "#88c44b"
+                                 }
+                              },
+                              "text" : {
+                                 "name" : "2503 (zeitgeist-fts)"
+                              }
+                           },
+                           {
+                              "connectors" : {
+                                 "style" : {
+                                    "stroke" : "#dcb041"
+                                 }
+                              },
+                              "text" : {
+                                 "name" : "25464 (notify-osd)"
+                              }
+                           },
+                           {
+                              "connectors" : {
+                                 "style" : {
+                                    "stroke" : "#aba80a"
+                                 }
+                              },
+                              "text" : {
+                                 "name" : "2560 (gconfd-2)"
+                              }
+                           },
+                           {
+                              "children" : [
+                                 {
+                                    "connectors" : {
+                                       "style" : {
+                                          "stroke" : "#a2251f"
+                                       }
+                                    },
+                                    "text" : {
+                                       "name" : "26113 (Web Content)"
+                                    }
+                                 }
+                              ],
+                              "connectors" : {
+                                 "style" : {
+                                    "stroke" : "#3f8f43"
+                                 }
+                              },
+                              "text" : {
+                                 "name" : "25986 (firefox)"
                               }
                            },
                            {
@@ -306,345 +806,71 @@ var simple_chart_config = {
                                        {
                                           "connectors" : {
                                              "style" : {
-                                                "stroke" : "#4475b4"
+                                                "stroke" : "#727564"
                                              }
                                           },
                                           "text" : {
-                                             "name" : "1840 (xfwm4)"
-                                          }
-                                       },
-                                       {
-                                          "connectors" : {
-                                             "style" : {
-                                                "stroke" : "#ec7539"
-                                             }
-                                          },
-                                          "text" : {
-                                             "name" : "1884 (Thunar)"
-                                          }
-                                       },
-                                       {
-                                          "children" : [
-                                             {
-                                                "connectors" : {
-                                                   "style" : {
-                                                      "stroke" : "#b982cc"
-                                                   }
-                                                },
-                                                "text" : {
-                                                   "name" : "2159 (panel-14-action)"
-                                                }
-                                             },
-                                             {
-                                                "connectors" : {
-                                                   "style" : {
-                                                      "stroke" : "#f2e819"
-                                                   }
-                                                },
-                                                "text" : {
-                                                   "name" : "2160 (panel-23-batter)"
-                                                }
-                                             },
-                                             {
-                                                "connectors" : {
-                                                   "style" : {
-                                                      "stroke" : "#bfd651"
-                                                   }
-                                                },
-                                                "text" : {
-                                                   "name" : "2161 (panel-19-pulsea)"
-                                                }
-                                             },
-                                             {
-                                                "connectors" : {
-                                                   "style" : {
-                                                      "stroke" : "#c869ea"
-                                                   }
-                                                },
-                                                "text" : {
-                                                   "name" : "2162 (panel-16-systra)"
-                                                }
-                                             },
-                                             {
-                                                "connectors" : {
-                                                   "style" : {
-                                                      "stroke" : "#b9ac41"
-                                                   }
-                                                },
-                                                "text" : {
-                                                   "name" : "2163 (panel-12-power-)"
-                                                }
-                                             },
-                                             {
-                                                "children" : [
-                                                   {
-                                                      "connectors" : {
-                                                         "style" : {
-                                                            "stroke" : "#add5e6"
-                                                         }
-                                                      },
-                                                      "text" : {
-                                                         "name" : "2337 (Web Content)"
-                                                      }
-                                                   }
-                                                ],
-                                                "connectors" : {
-                                                   "style" : {
-                                                      "stroke" : "#c5b24f"
-                                                   }
-                                                },
-                                                "text" : {
-                                                   "name" : "2241 (firefox)"
-                                                }
-                                             },
-                                             {
-                                                "connectors" : {
-                                                   "style" : {
-                                                      "stroke" : "#131a72"
-                                                   }
-                                                },
-                                                "text" : {
-                                                   "name" : "2721 (nautilus)"
-                                                }
-                                             }
-                                          ],
-                                          "connectors" : {
-                                             "style" : {
-                                                "stroke" : "#62dde7"
-                                             }
-                                          },
-                                          "text" : {
-                                             "name" : "1891 (xfce4-panel)"
-                                          }
-                                       },
-                                       {
-                                          "connectors" : {
-                                             "style" : {
-                                                "stroke" : "#97cadd"
-                                             }
-                                          },
-                                          "text" : {
-                                             "name" : "1930 (xfdesktop)"
-                                          }
-                                       },
-                                       {
-                                          "connectors" : {
-                                             "style" : {
-                                                "stroke" : "#5084df"
-                                             }
-                                          },
-                                          "text" : {
-                                             "name" : "2020 (update-notifier)"
-                                          }
-                                       },
-                                       {
-                                          "connectors" : {
-                                             "style" : {
-                                                "stroke" : "#1df648"
-                                             }
-                                          },
-                                          "text" : {
-                                             "name" : "2021 (nm-applet)"
-                                          }
-                                       },
-                                       {
-                                          "connectors" : {
-                                             "style" : {
-                                                "stroke" : "#36371f"
-                                             }
-                                          },
-                                          "text" : {
-                                             "name" : "2033 (xscreensaver)"
-                                          }
-                                       },
-                                       {
-                                          "connectors" : {
-                                             "style" : {
-                                                "stroke" : "#070088"
-                                             }
-                                          },
-                                          "text" : {
-                                             "name" : "2050 (deja-dup-monito)"
-                                          }
-                                       },
-                                       {
-                                          "connectors" : {
-                                             "style" : {
-                                                "stroke" : "#f13936"
-                                             }
-                                          },
-                                          "text" : {
-                                             "name" : "2051 (zeitgeist-datah)"
-                                          }
-                                       },
-                                       {
-                                          "connectors" : {
-                                             "style" : {
-                                                "stroke" : "#b3e68b"
-                                             }
-                                          },
-                                          "text" : {
-                                             "name" : "2052 (polkit-gnome-au)"
-                                          }
-                                       },
-                                       {
-                                          "connectors" : {
-                                             "style" : {
-                                                "stroke" : "#1a2cbd"
-                                             }
-                                          },
-                                          "text" : {
-                                             "name" : "2053 (applet.py)"
+                                             "name" : "2462 (generator)"
                                           }
                                        }
                                     ],
                                     "connectors" : {
                                        "style" : {
-                                          "stroke" : "#e8bed8"
+                                          "stroke" : "#e3be17"
                                        }
                                     },
                                     "text" : {
-                                       "name" : "1828 (xfce4-session)"
+                                       "name" : "26289 (bash)"
+                                    }
+                                 },
+                                 {
+                                    "connectors" : {
+                                       "style" : {
+                                          "stroke" : "#2fee3b"
+                                       }
+                                    },
+                                    "text" : {
+                                       "name" : "32335 (bash)"
                                     }
                                  }
                               ],
                               "connectors" : {
                                  "style" : {
-                                    "stroke" : "#5ba1b6"
+                                    "stroke" : "#fe72f4"
                                  }
                               },
                               "text" : {
-                                 "name" : "1817 (sh)"
+                                 "name" : "26282 (gnome-terminal-)"
                               }
                            },
                            {
                               "connectors" : {
                                  "style" : {
-                                    "stroke" : "#c33902"
+                                    "stroke" : "#8ee132"
                                  }
                               },
                               "text" : {
-                                 "name" : "18184 (gvfsd-dnssd)"
+                                 "name" : "27039 (gvfsd-network)"
                               }
                            },
                            {
                               "connectors" : {
                                  "style" : {
-                                    "stroke" : "#a18906"
+                                    "stroke" : "#a26af7"
                                  }
                               },
                               "text" : {
-                                 "name" : "1833 (xfconfd)"
+                                 "name" : "27047 (gvfsd-smb-brows)"
                               }
                            },
                            {
                               "connectors" : {
                                  "style" : {
-                                    "stroke" : "#0126fd"
+                                    "stroke" : "#ed4828"
                                  }
                               },
                               "text" : {
-                                 "name" : "1837 (ssh-agent)"
-                              }
-                           },
-                           {
-                              "connectors" : {
-                                 "style" : {
-                                    "stroke" : "#4adbb4"
-                                 }
-                              },
-                              "text" : {
-                                 "name" : "1893 (xfsettingsd)"
-                              }
-                           },
-                           {
-                              "connectors" : {
-                                 "style" : {
-                                    "stroke" : "#696234"
-                                 }
-                              },
-                              "text" : {
-                                 "name" : "2017 (xfce4-power-man)"
-                              }
-                           },
-                           {
-                              "connectors" : {
-                                 "style" : {
-                                    "stroke" : "#72546d"
-                                 }
-                              },
-                              "text" : {
-                                 "name" : "2029 (xfce4-power-man)"
-                              }
-                           },
-                           {
-                              "connectors" : {
-                                 "style" : {
-                                    "stroke" : "#2887d3"
-                                 }
-                              },
-                              "text" : {
-                                 "name" : "2041 (xfce4-volumed)"
-                              }
-                           },
-                           {
-                              "connectors" : {
-                                 "style" : {
-                                    "stroke" : "#33a101"
-                                 }
-                              },
-                              "text" : {
-                                 "name" : "2056 (core)"
-                              }
-                           },
-                           {
-                              "connectors" : {
-                                 "style" : {
-                                    "stroke" : "#f00abf"
-                                 }
-                              },
-                              "text" : {
-                                 "name" : "2071 (pulseaudio)"
-                              }
-                           },
-                           {
-                              "connectors" : {
-                                 "style" : {
-                                    "stroke" : "#c96661"
-                                 }
-                              },
-                              "text" : {
-                                 "name" : "2083 (gvfs-udisks2-vo)"
-                              }
-                           },
-                           {
-                              "connectors" : {
-                                 "style" : {
-                                    "stroke" : "#012a1a"
-                                 }
-                              },
-                              "text" : {
-                                 "name" : "2108 (gvfs-mtp-volume)"
-                              }
-                           },
-                           {
-                              "connectors" : {
-                                 "style" : {
-                                    "stroke" : "#034b23"
-                                 }
-                              },
-                              "text" : {
-                                 "name" : "2113 (gvfs-afc-volume)"
-                              }
-                           },
-                           {
-                              "connectors" : {
-                                 "style" : {
-                                    "stroke" : "#09cb49"
-                                 }
-                              },
-                              "text" : {
-                                 "name" : "2119 (gvfs-goa-volume)"
+                                 "name" : "27064 (gvfsd-dnssd)"
                               }
                            },
                            {
@@ -652,287 +878,121 @@ var simple_chart_config = {
                                  {
                                     "connectors" : {
                                        "style" : {
-                                          "stroke" : "#8616a4"
+                                          "stroke" : "#3073d1"
                                        }
                                     },
                                     "text" : {
-                                       "name" : "2131 (zeitgeist-daemo)"
+                                       "name" : "27227 (plugin_host)"
                                     }
                                  }
                               ],
                               "connectors" : {
                                  "style" : {
-                                    "stroke" : "#3b0007"
+                                    "stroke" : "#b917f6"
                                  }
                               },
                               "text" : {
-                                 "name" : "2127 (sh)"
+                                 "name" : "27213 (sublime_text)"
                               }
                            },
                            {
                               "connectors" : {
                                  "style" : {
-                                    "stroke" : "#6f72db"
+                                    "stroke" : "#58d506"
                                  }
                               },
                               "text" : {
-                                 "name" : "2135 (goa-daemon)"
+                                 "name" : "2858 (evince)"
                               }
                            },
                            {
                               "connectors" : {
                                  "style" : {
-                                    "stroke" : "#5c9ae2"
+                                    "stroke" : "#1b487c"
                                  }
                               },
                               "text" : {
-                                 "name" : "2153 (zeitgeist-fts)"
+                                 "name" : "2865 (evinced)"
                               }
                            },
                            {
                               "connectors" : {
                                  "style" : {
-                                    "stroke" : "#b04d85"
+                                    "stroke" : "#7facba"
                                  }
                               },
                               "text" : {
-                                 "name" : "2202 (goa-identity-se)"
-                              }
-                           },
-                           {
-                              "connectors" : {
-                                 "style" : {
-                                    "stroke" : "#b13e0f"
-                                 }
-                              },
-                              "text" : {
-                                 "name" : "2210 (gvfs-gphoto2-vo)"
-                              }
-                           },
-                           {
-                              "connectors" : {
-                                 "style" : {
-                                    "stroke" : "#f08875"
-                                 }
-                              },
-                              "text" : {
-                                 "name" : "2219 (gvfsd-trash)"
-                              }
-                           },
-                           {
-                              "connectors" : {
-                                 "style" : {
-                                    "stroke" : "#d2891f"
-                                 }
-                              },
-                              "text" : {
-                                 "name" : "2226 (gvfsd-metadata)"
-                              }
-                           },
-                           {
-                              "connectors" : {
-                                 "style" : {
-                                    "stroke" : "#ec0ce9"
-                                 }
-                              },
-                              "text" : {
-                                 "name" : "2275 (gconfd-2)"
-                              }
-                           },
-                           {
-                              "children" : [
-                                 {
-                                    "children" : [
-                                       {
-                                          "connectors" : {
-                                             "style" : {
-                                                "stroke" : "#9015b6"
-                                             }
-                                          },
-                                          "text" : {
-                                             "name" : "25313 (generator)"
-                                          }
-                                       }
-                                    ],
-                                    "connectors" : {
-                                       "style" : {
-                                          "stroke" : "#599ccc"
-                                       }
-                                    },
-                                    "text" : {
-                                       "name" : "2407 (bash)"
-                                    }
-                                 }
-                              ],
-                              "connectors" : {
-                                 "style" : {
-                                    "stroke" : "#fe57cc"
-                                 }
-                              },
-                              "text" : {
-                                 "name" : "2402 (gnome-terminal-)"
-                              }
-                           },
-                           {
-                              "children" : [
-                                 {
-                                    "connectors" : {
-                                       "style" : {
-                                          "stroke" : "#8547be"
-                                       }
-                                    },
-                                    "text" : {
-                                       "name" : "2504 (plugin_host)"
-                                    }
-                                 }
-                              ],
-                              "connectors" : {
-                                 "style" : {
-                                    "stroke" : "#e0a3d8"
-                                 }
-                              },
-                              "text" : {
-                                 "name" : "2491 (sublime_text)"
-                              }
-                           },
-                           {
-                              "connectors" : {
-                                 "style" : {
-                                    "stroke" : "#c4d326"
-                                 }
-                              },
-                              "text" : {
-                                 "name" : "2728 (dconf-service)"
-                              }
-                           },
-                           {
-                              "connectors" : {
-                                 "style" : {
-                                    "stroke" : "#c985e4"
-                                 }
-                              },
-                              "text" : {
-                                 "name" : "2740 (gvfsd-burn)"
+                                 "name" : "3161 (gvfsd-metadata)"
                               }
                            }
                         ],
                         "connectors" : {
                            "style" : {
-                              "stroke" : "#d8f66d"
+                              "stroke" : "#165b29"
                            }
                         },
                         "text" : {
-                           "name" : "1579 (upstart)"
+                           "name" : "1835 (upstart)"
                         }
                      }
                   ],
                   "connectors" : {
                      "style" : {
-                        "stroke" : "#4f4976"
+                        "stroke" : "#515b9b"
                      }
                   },
                   "text" : {
-                     "name" : "1373 (lightdm)"
+                     "name" : "1636 (lightdm)"
                   }
                }
             ],
             "connectors" : {
                "style" : {
-                  "stroke" : "#ed3682"
+                  "stroke" : "#47e97e"
                }
             },
             "text" : {
-               "name" : "1190 (lightdm)"
+               "name" : "1504 (lightdm)"
             }
          },
          {
             "connectors" : {
                "style" : {
-                  "stroke" : "#584697"
+                  "stroke" : "#790c68"
                }
             },
             "text" : {
-               "name" : "1191 (bluetoothd)"
+               "name" : "1520 (agetty)"
             }
          },
          {
             "connectors" : {
                "style" : {
-                  "stroke" : "#0fa0b3"
+                  "stroke" : "#f07a30"
                }
             },
             "text" : {
-               "name" : "1195 (core)"
+               "name" : "1539 (nmbd)"
             }
          },
          {
             "connectors" : {
                "style" : {
-                  "stroke" : "#5b1f0c"
+                  "stroke" : "#1a2aa4"
                }
             },
             "text" : {
-               "name" : "1220 (beanstalkd)"
+               "name" : "1692 (rtkit-daemon)"
             }
          },
          {
             "connectors" : {
                "style" : {
-                  "stroke" : "#a8a453"
+                  "stroke" : "#6be33b"
                }
             },
             "text" : {
-               "name" : "1253 (wpa_supplicant)"
-            }
-         },
-         {
-            "connectors" : {
-               "style" : {
-                  "stroke" : "#678676"
-               }
-            },
-            "text" : {
-               "name" : "1263 (nvidia-persiste)"
-            }
-         },
-         {
-            "connectors" : {
-               "style" : {
-                  "stroke" : "#c04b4b"
-               }
-            },
-            "text" : {
-               "name" : "1405 (agetty)"
-            }
-         },
-         {
-            "connectors" : {
-               "style" : {
-                  "stroke" : "#e61550"
-               }
-            },
-            "text" : {
-               "name" : "1490 (rtkit-daemon)"
-            }
-         },
-         {
-            "connectors" : {
-               "style" : {
-                  "stroke" : "#cbedc6"
-               }
-            },
-            "text" : {
-               "name" : "1500 (upowerd)"
-            }
-         },
-         {
-            "connectors" : {
-               "style" : {
-                  "stroke" : "#b8bc10"
-               }
-            },
-            "text" : {
-               "name" : "1546 (colord)"
+               "name" : "1718 (upowerd)"
             }
          },
          {
@@ -940,137 +1000,293 @@ var simple_chart_config = {
                {
                   "connectors" : {
                      "style" : {
-                        "stroke" : "#2fabc6"
+                        "stroke" : "#623c11"
                      }
                   },
                   "text" : {
-                     "name" : "1571 ((sd-pam))"
+                     "name" : "1824 ((sd-pam))"
                   }
                }
             ],
             "connectors" : {
                "style" : {
-                  "stroke" : "#b1040d"
+                  "stroke" : "#6958d8"
                }
             },
             "text" : {
-               "name" : "1569 (systemd)"
+               "name" : "1823 (systemd)"
             }
          },
          {
             "connectors" : {
                "style" : {
-                  "stroke" : "#c992ad"
+                  "stroke" : "#655705"
                }
             },
             "text" : {
-               "name" : "1577 (gnome-keyring-d)"
+               "name" : "1830 (gnome-keyring-d)"
+            }
+         },
+         {
+            "children" : [
+               {
+                  "connectors" : {
+                     "style" : {
+                        "stroke" : "#9f6e61"
+                     }
+                  },
+                  "text" : {
+                     "name" : "1944 (smbd)"
+                  }
+               },
+               {
+                  "connectors" : {
+                     "style" : {
+                        "stroke" : "#48bfbc"
+                     }
+                  },
+                  "text" : {
+                     "name" : "1946 (smbd)"
+                  }
+               }
+            ],
+            "connectors" : {
+               "style" : {
+                  "stroke" : "#e48626"
+               }
+            },
+            "text" : {
+               "name" : "1940 (smbd)"
             }
          },
          {
             "connectors" : {
                "style" : {
-                  "stroke" : "#7d6dcc"
+                  "stroke" : "#e28033"
                }
             },
             "text" : {
-               "name" : "2097 (udisksd)"
+               "name" : "20530 (cups-browsed)"
             }
          },
          {
             "connectors" : {
                "style" : {
-                  "stroke" : "#8916f1"
+                  "stroke" : "#ca712d"
                }
             },
             "text" : {
-               "name" : "237 (systemd-journal)"
+               "name" : "2307 (udisksd)"
             }
          },
          {
             "connectors" : {
                "style" : {
-                  "stroke" : "#5cfd78"
+                  "stroke" : "#fb0b57"
                }
             },
             "text" : {
-               "name" : "265 (systemd-udevd)"
+               "name" : "2333 (fwupd)"
             }
          },
          {
             "connectors" : {
                "style" : {
-                  "stroke" : "#53be43"
+                  "stroke" : "#a0763b"
                }
             },
             "text" : {
-               "name" : "870 (systemd-timesyn)"
+               "name" : "250 (systemd-journal)"
             }
          },
          {
             "connectors" : {
                "style" : {
-                  "stroke" : "#1e25d7"
+                  "stroke" : "#db59f6"
                }
             },
             "text" : {
-               "name" : "963 (acpid)"
+               "name" : "25945 (ntpd)"
             }
          },
          {
             "connectors" : {
                "style" : {
-                  "stroke" : "#ed7145"
+                  "stroke" : "#6c42ce"
                }
             },
             "text" : {
-               "name" : "966 (ModemManager)"
+               "name" : "278 (systemd-udevd)"
             }
          },
          {
             "connectors" : {
                "style" : {
-                  "stroke" : "#352a03"
+                  "stroke" : "#c42727"
                }
             },
             "text" : {
-               "name" : "968 (thermald)"
+               "name" : "751 (acpid)"
             }
          },
          {
             "connectors" : {
                "style" : {
-                  "stroke" : "#45d92e"
+                  "stroke" : "#cac615"
                }
             },
             "text" : {
-               "name" : "975 (systemd-logind)"
+               "name" : "771 (snapd)"
             }
          },
          {
             "connectors" : {
                "style" : {
-                  "stroke" : "#8b8bb1"
+                  "stroke" : "#2c0f54"
                }
             },
             "text" : {
-               "name" : "992 (rsyslogd)"
+               "name" : "773 (rsyslogd)"
             }
          },
          {
             "connectors" : {
                "style" : {
-                  "stroke" : "#99d4c3"
+                  "stroke" : "#6873db"
                }
             },
             "text" : {
-               "name" : "993 (whoopsie)"
+               "name" : "786 (dbus-daemon)"
+            }
+         },
+         {
+            "connectors" : {
+               "style" : {
+                  "stroke" : "#8ed55c"
+               }
+            },
+            "text" : {
+               "name" : "845 (ModemManager)"
+            }
+         },
+         {
+            "children" : [
+               {
+                  "connectors" : {
+                     "style" : {
+                        "stroke" : "#41a14d"
+                     }
+                  },
+                  "text" : {
+                     "name" : "1109 (dnsmasq)"
+                  }
+               },
+               {
+                  "connectors" : {
+                     "style" : {
+                        "stroke" : "#6e9dd8"
+                     }
+                  },
+                  "text" : {
+                     "name" : "25673 (dhclient)"
+                  }
+               }
+            ],
+            "connectors" : {
+               "style" : {
+                  "stroke" : "#c53ece"
+               }
+            },
+            "text" : {
+               "name" : "848 (NetworkManager)"
+            }
+         },
+         {
+            "connectors" : {
+               "style" : {
+                  "stroke" : "#809928"
+               }
+            },
+            "text" : {
+               "name" : "852 (cron)"
+            }
+         },
+         {
+            "connectors" : {
+               "style" : {
+                  "stroke" : "#f785e9"
+               }
+            },
+            "text" : {
+               "name" : "854 (whoopsie)"
+            }
+         },
+         {
+            "children" : [
+               {
+                  "connectors" : {
+                     "style" : {
+                        "stroke" : "#c64a11"
+                     }
+                  },
+                  "text" : {
+                     "name" : "1000 (avahi-daemon)"
+                  }
+               }
+            ],
+            "connectors" : {
+               "style" : {
+                  "stroke" : "#6d1557"
+               }
+            },
+            "text" : {
+               "name" : "856 (avahi-daemon)"
+            }
+         },
+         {
+            "connectors" : {
+               "style" : {
+                  "stroke" : "#82c0e6"
+               }
+            },
+            "text" : {
+               "name" : "857 (cgmanager)"
+            }
+         },
+         {
+            "connectors" : {
+               "style" : {
+                  "stroke" : "#d7295a"
+               }
+            },
+            "text" : {
+               "name" : "920 (irqbalance)"
+            }
+         },
+         {
+            "connectors" : {
+               "style" : {
+                  "stroke" : "#33b8b0"
+               }
+            },
+            "text" : {
+               "name" : "931 (colord)"
+            }
+         },
+         {
+            "connectors" : {
+               "style" : {
+                  "stroke" : "#0f7952"
+               }
+            },
+            "text" : {
+               "name" : "965 (polkitd)"
             }
          }
       ],
       "connectors" : {
          "style" : {
-            "stroke" : "#c65331"
+            "stroke" : "#5ce8ef"
          }
       },
       "text" : {
@@ -1080,7 +1296,7 @@ var simple_chart_config = {
    "processes" : [
       {
          "name" : "root",
-         "quantity" : 138
+         "quantity" : 145
       },
       {
          "name" : "daemon",
@@ -1091,12 +1307,92 @@ var simple_chart_config = {
          "quantity" : 0
       },
       {
-         "name" : "systemd-timesync",
-         "quantity" : 1
+         "name" : "uuidd",
+         "quantity" : 0
+      },
+      {
+         "name" : "suporte",
+         "quantity" : 0
+      },
+      {
+         "name" : "admin",
+         "quantity" : 0
       },
       {
          "name" : "vinihcampos",
-         "quantity" : 70
+         "quantity" : 90
+      },
+      {
+         "name" : "syslog",
+         "quantity" : 1
+      },
+      {
+         "name" : "messagebus",
+         "quantity" : 1
+      },
+      {
+         "name" : "usbmux",
+         "quantity" : 0
+      },
+      {
+         "name" : "dnsmasq",
+         "quantity" : 0
+      },
+      {
+         "name" : "avahi-autoipd",
+         "quantity" : 0
+      },
+      {
+         "name" : "kernoops",
+         "quantity" : 0
+      },
+      {
+         "name" : "rtkit",
+         "quantity" : 1
+      },
+      {
+         "name" : "saned",
+         "quantity" : 0
+      },
+      {
+         "name" : "whoopsie",
+         "quantity" : 1
+      },
+      {
+         "name" : "speech-dispatcher",
+         "quantity" : 0
+      },
+      {
+         "name" : "avahi",
+         "quantity" : 2
+      },
+      {
+         "name" : "lightdm",
+         "quantity" : 0
+      },
+      {
+         "name" : "colord",
+         "quantity" : 1
+      },
+      {
+         "name" : "hplip",
+         "quantity" : 0
+      },
+      {
+         "name" : "pulse",
+         "quantity" : 0
+      },
+      {
+         "name" : "ntp",
+         "quantity" : 1
+      },
+      {
+         "name" : "sshd",
+         "quantity" : 0
+      },
+      {
+         "name" : "systemd-timesync",
+         "quantity" : 0
       },
       {
          "name" : "systemd-network",
@@ -1111,80 +1407,12 @@ var simple_chart_config = {
          "quantity" : 0
       },
       {
-         "name" : "syslog",
-         "quantity" : 1
-      },
-      {
          "name" : "_apt",
          "quantity" : 0
       },
       {
-         "name" : "messagebus",
-         "quantity" : 1
-      },
-      {
-         "name" : "uuidd",
+         "name" : "sssd",
          "quantity" : 0
-      },
-      {
-         "name" : "lightdm",
-         "quantity" : 0
-      },
-      {
-         "name" : "whoopsie",
-         "quantity" : 1
-      },
-      {
-         "name" : "avahi-autoipd",
-         "quantity" : 0
-      },
-      {
-         "name" : "avahi",
-         "quantity" : 2
-      },
-      {
-         "name" : "dnsmasq",
-         "quantity" : 0
-      },
-      {
-         "name" : "colord",
-         "quantity" : 1
-      },
-      {
-         "name" : "speech-dispatcher",
-         "quantity" : 0
-      },
-      {
-         "name" : "hplip",
-         "quantity" : 0
-      },
-      {
-         "name" : "kernoops",
-         "quantity" : 0
-      },
-      {
-         "name" : "pulse",
-         "quantity" : 0
-      },
-      {
-         "name" : "rtkit",
-         "quantity" : 1
-      },
-      {
-         "name" : "saned",
-         "quantity" : 0
-      },
-      {
-         "name" : "usbmux",
-         "quantity" : 0
-      },
-      {
-         "name" : "beanstalkd",
-         "quantity" : 1
-      },
-      {
-         "name" : "nvidia-persistenced",
-         "quantity" : 1
       },
       {
          "name" : "proxy",
@@ -1247,6 +1475,6 @@ var simple_chart_config = {
          "quantity" : 0
       }
    ],
-   "totalProcesses" : 219
+   "totalProcesses" : 244
 }
 ;

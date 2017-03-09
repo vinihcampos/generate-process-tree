@@ -16,7 +16,8 @@
         <h1>Processes Tree</h1>
         <hr/>
         <h4 id="np">Nº of Processes: </h4>
-        <h4 id="np_by_users">Nº of Processes of each user: </h4>
+        <h4>Nº of Processes of each user: </h4>
+        <ul id="np_by_users"></ul>
         <hr />
     </div>
     <div class="chart" id="tree-simple"></div>
@@ -30,10 +31,26 @@
     <script>
         new Treant( simple_chart_config );
         var previewBody = $('.chart').minimap();
-        document.getElementById('np').innerHTML += simple_chart_config.totalProcesses;
+
+        var span = document.createElement("SPAN");
+        var text = document.createTextNode(simple_chart_config.totalProcesses);
+        span.appendChild(text);
+        document.getElementById('np').appendChild(span);
 
         for(i = 0; i < simple_chart_config.processes.length; ++i){
-            document.getElementById('np_by_users').innerHTML += simple_chart_config.processes[i].name + "-> " + simple_chart_config.processes[i].quantity + " | ";
+
+            var li = document.createElement("li");
+            span = document.createElement("span");
+            text = document.createTextNode(simple_chart_config.processes[i].name);
+            span.appendChild(text);
+            li.appendChild(span);
+
+            span = document.createElement("span");
+            text = document.createTextNode(simple_chart_config.processes[i].quantity);
+            span.appendChild(text);
+            li.appendChild(span);
+            document.getElementById('np_by_users').appendChild(li);
+
         }
 
         setTimeout(function(){

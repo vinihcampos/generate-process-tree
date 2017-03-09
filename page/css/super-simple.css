@@ -18,8 +18,48 @@ body {
 }
 
 #process h4{
-	font-family: 'Lobster Two';
-	margin: 10px 20px; 
+	font-family: 'Monospace';
+	margin: 10px 20px;
+	font-size: 10px; 
+}
+
+#process ul{
+	margin: 10px;
+	font-size: 12px;
+}
+
+#process span{
+	padding: 5px;
+	background: #248f24;
+	border-radius: 8px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.5);
+	margin: 5px 10px;
+	display: inline-block;
+	color: #FFF;
+}
+
+#process li{
+	display: inline-block;
+}
+
+#process li span:nth-child(odd){
+	padding: 5px;
+	background: #262626;
+	border-radius: 8px 0 0 8px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.5);
+	margin: 5px 0 5px 5px;
+	
+	color: #FFF;
+}
+
+#process li span:nth-child(even){
+	padding: 5px;
+	background: #248f24;
+	border-radius: 0 8px 8px 0;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.5);
+	margin: 5px 5px 5px 0;
+	display: inline-block;
+	color: #FFF;
 }
 
 #process hr{
