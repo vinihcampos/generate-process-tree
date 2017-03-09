@@ -7,7 +7,9 @@
 #include <utility>
 #include <fstream>
 #include <sstream>
-#include <boost/filesystem.hpp>
+#include <boost/filesystem.hpp> // system file
+#include <thread>	// std::this_thread::sleep_for
+#include <chrono>   // std::chrono::seconds
 #include "json/json.h"
 
 using namespace std;
@@ -32,13 +34,34 @@ Json::Value populate_json(string pid){
 	}
 	Json::Value structure;
 	structure["text"] = name;
-	
+
+	Json::Value stroke, style;
+	int r = rand()%255;
+	int g = rand()%255;
+	int b = rand()%255;
+
+	std::stringstream ss;	
+	string r_,g_,b_;
+	ss << std::hex << r;
+	r_ = ss.str(); ss.clear(); ss.str(string());
+	ss << std::hex << g;
+	g_ = ss.str(); ss.clear(); ss.str(string());
+	ss << std::hex << b;
+	b_ = ss.str(); ss.clear(); ss.str(string());
+
+	r_.size() == 1 ? r_ = "0" + r_ : r_;
+	g_.size() == 1 ? g_ = "0" + g_ : g_;
+	b_.size() == 1 ? b_ = "0" + b_ : b_; 
+
+	stroke["stroke"] = Json::Value("#" + r_ + g_ + b_);
+	style["style"] = stroke;
+	structure["connectors"] = style;	
 	if(!children.isNull()) structure["children"] = children; 
 
 	return structure; 
 }
 
-void identify_users(){
+void identify_users(int & n_processes){
 	ifstream file("/etc/passwd", ifstream::in);
 	string input;
 
@@ -61,6 +84,7 @@ void identify_users(){
 
 	file.close();
 	if(exists("/proc/self/status")){
+		n_processes++;
 		file.open("/proc/self/status",ifstream::in);
 		string input;
 		int counter = 0;
@@ -77,6 +101,7 @@ void identify_users(){
 	}
 
 	if(exists("/proc/thread-self/status")){
+		n_processes++;
 		file.open("/proc/thread-self/status",ifstream::in);
 		string input;
 		int counter = 0;
@@ -90,27 +115,17 @@ void identify_users(){
 			}				
 		}
 		file.close();
-	}
-	
+	}	
 }
 
-int main(int argn, char ** argc){
-	
-	int pid = 1;
-
-	if(argn > 1){
-		pid = atoi(argc[1]);
-	}
-
+int check_processes(int & pid, int & sleep_time){
 	path p("/proc");
 
     directory_iterator end_itr;
-
-    queue<string> directory_has_subprocesses;
     
-    int n_processes = 2;
+    int n_processes = 0;
     // Identifying users of system
-    identify_users();
+    identify_users(n_processes);
 
     for (directory_iterator itr(p); itr != end_itr; ++itr) {
 
@@ -132,6 +147,7 @@ int main(int argn, char ** argc){
 				}				
 			}
 
+			// Getting information about PID, PPID and NAME PROCESS
     		ifstream file(itr->path().string() + "/stat", ifstream::in);
     		std::vector<string> parsed(std::istream_iterator<string>(file), {});
 
@@ -162,80 +178,38 @@ int main(int argn, char ** argc){
 	    			processes.insert( make_pair( PPID , make_pair( "", set<string>() ) ) );
 	    		}
 	    		processes[ PPID ].second.insert( PID );
-    		}
-
-            if(exists(itr->path().string() + "/task")){
-                directory_has_subprocesses.push(itr->path().string() + "/task");
-            }    		
+    		}	
     	}
-    }
+    }    
 
-    while(!directory_has_subprocesses.empty()){
-        string front = directory_has_subprocesses.front();
-        directory_has_subprocesses.pop();
-
-        for(directory_iterator itr(front); itr != end_itr; ++itr){
-
-        	//cout << itr->path().string() << endl;
-
-        	if( is_directory( itr->path() ) && is_number(itr->path().leaf().string()) ){
-        		//cout << "Number path: " << itr->path().string() << endl;
-
-	    		ifstream file(itr->path().string() + "/stat", ifstream::in);
-	    		std::vector<string> parsed(std::istream_iterator<string>(file), {});
-
-	    		string PID = "", NAME = "", PPID = "";
-	    		int counter = 1;
-	    		for(int i = 0; i < parsed.size(); ++i){
-	    			if((counter == 1 || counter == 3) && is_number(parsed[i])){
-	    				counter == 1 ? PID = parsed[i] : PPID = parsed[i];
-	    				counter++;
-	    			}else if(counter == 2 && !is_number(parsed[i])){
-	    				while(parsed[i][parsed[i].size()-1] != ')'){
-	    					NAME += parsed[i++] + " "; 
-	    				}
-	    				NAME += parsed[i];
-	    				counter++;
-	    			}
-	    			if(counter > 3) break;
-	    		} 
-
-	    		//cout << "PID ("<<PID<<") | NAME ("<<NAME<<") | PPID ("<<PPID<<")\n";
-
-	    		if( processes.find( PID )  == processes.end()){
-	    			processes.insert( make_pair( PID , make_pair( NAME, set<string>() ) ) );
-	    		}else{
-	    			processes[ PID ].first = NAME;
-	    		}
-
-	    		if(PPID.compare("0")){
-	    			if(processes.find(  PPID )  == processes.end()){
-		    			processes.insert( make_pair( PPID , make_pair( "", set<string>() ) ) );
-		    		}
-		    		processes[ PPID ].second.insert( PID );
-	    		}
-
-	            if(exists(itr->path().string() + "/task")){            
-	                directory_has_subprocesses.push(itr->path().string() + "/task");
-	            }   		
-	    	}
-        }               
-    }
-
+    // Json Informations
     Json::Value tree;
     Json::Value chartValue;
     Json::Value connectors;
     Json::Value style;
+    Json::Value node;
+    Json::Value animation;
 
     connectors["type"] = Json::Value("step");
-    //style["stroke-width"] = Json::Value("2");
+    style["stroke-width"] = Json::Value("2");
+    style["arrow-end"] = Json::Value("oval-wide-long");
     //style["stroke"] = Json::Value("#ccc");
-    //connectors["style"] = style;
+    connectors["style"] = style;
+
+    node["collapsable"] = Json::Value("true");
+
+    //animation["nodeAnimation"] = Json::Value("easeOutBounce");
+    //animation["nodeSpeed"] = Json::Value(700);
+    //animation["connectorsAnimation"] = Json::Value("easeOutBounce");
+    //animation["connectorsSpeed"] = Json::Value(700);
 
     chartValue["container"] = Json::Value("#tree-simple");
     chartValue["rootOrientation"] = Json::Value("WEST");
     chartValue["nodeAlign"] = Json::Value("BOTTOM");
     chartValue["connectors"] = connectors;
+    chartValue["node"] = node;
+    //chartValue["animation"] = animation;
+    //chartValue["animateOnInit"] = Json::Value(true);
 
     tree["chart"] = chartValue;
     
@@ -254,10 +228,44 @@ int main(int argn, char ** argc){
     Json::StyledWriter writer;
 
     std::ofstream ofl("page/json/tree.json");
+    ofl << "var reload_time = " << sleep_time << ";" << endl;
     ofl << "var simple_chart_config = ";
     ofl << writer.write(tree);
     ofl << ";";
     ofl.close();
+
+    return n_processes;
+}
+
+int main(int argn, char ** argc){
+	
+	srand (time(NULL));
+	int pid = 1;
+	int sleep_time = 30;
+
+	if(argn > 1){
+		pid = atoi(argc[1]);
+	}
+	if(argn > 2){
+		sleep_time = atoi(argc[2]) * 1000;
+	}
+
+	int counter = 0;
+
+	while(1){
+		
+		cout << "# Number of processes: " << check_processes(pid, sleep_time) << endl;
+		cout << "# Number of executions: " << ++counter << endl;
+		for(auto it = process_users.begin(); it != process_users.end(); ++it){
+			cout << "# PID->" << it->first << " | UNAME->" << it->second.first << " | nº proc-> " << it->second.second << endl;
+		}
+		
+		cout << "############################################\n";
+		processes.clear();
+		process_users.clear();
+		std::this_thread::sleep_for (std::chrono::milliseconds(sleep_time));
+	}
+	
 
 	return 0;
 }

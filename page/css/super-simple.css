@@ -2,24 +2,50 @@ body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,
 	margin:0; padding:0; 
 }
 
-
 body { 
 	background: #fff; 
+}
+
+#process{
+	width: 100%;
+	height: auto;
+	padding: 20px 0;
+}
+
+#process h1{
+	text-align: center;
+	font-family: 'Dancing Script';
+}
+
+#process h4{
+	font-family: 'Lobster Two';
+	margin: 10px 20px; 
+}
+
+#process hr{
+	margin: 20px;
 }
 
 /* optional Container STYLES */
 .chart { 
 	height: auto; 
 	width: auto; 
-	margin: 20px; 
-	border: 3px solid #DDD; 
+	margin: 10px; 
+	/*border: 4px solid #E8E8E3;*/ 
 	border-radius: 3px; 
-
 }
 .node { 
-	color: #C8C8C8; 
-	border: 2px solid #C8C8C8; 
+	min-width: 60px;
+	text-align: center;
+	color: #000; 
+	border: 2px solid #E8E8E3; 
 	border-radius: 3px; 
+	box-shadow: 1px 1px 1px rgba(0,0,0,.5);
+	background: #FFF;
+}
+.node:hover{
+	color: #8B8B8B;
+	text-shadow: 1px 1px rgba(0,0,0,.15);
 }
 .node p { 
 	font-size: 10px; 

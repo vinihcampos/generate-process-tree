@@ -1,161 +1,156 @@
+var reload_time = 3000;
 var simple_chart_config = {
    "chart" : {
       "connectors" : {
+         "style" : {
+            "arrow-end" : "oval-wide-long",
+            "stroke-width" : "2"
+         },
          "type" : "step"
       },
       "container" : "#tree-simple",
+      "node" : {
+         "collapsable" : "true"
+      },
       "nodeAlign" : "BOTTOM",
       "rootOrientation" : "WEST"
    },
    "nodeStructure" : {
       "children" : [
          {
+            "connectors" : {
+               "style" : {
+                  "stroke" : "#a730b2"
+               }
+            },
             "text" : {
-               "name" : "1001 (accounts-daemon)"
-            }
-         },
-         {
-            "text" : {
-               "name" : "1003 (dbus-daemon)"
-            }
-         },
-         {
-            "text" : {
-               "name" : "1033 (gmain)"
-            }
-         },
-         {
-            "text" : {
-               "name" : "1038 (gmain)"
-            }
-         },
-         {
-            "text" : {
-               "name" : "1040 (in:imuxsock)"
-            }
-         },
-         {
-            "text" : {
-               "name" : "1041 (in:imklog)"
-            }
-         },
-         {
-            "text" : {
-               "name" : "1042 (rs:main Q:Reg)"
-            }
-         },
-         {
-            "text" : {
-               "name" : "1043 (gmain)"
-            }
-         },
-         {
-            "text" : {
-               "name" : "1044 (gdbus)"
-            }
-         },
-         {
-            "text" : {
-               "name" : "1046 (gdbus)"
-            }
-         },
-         {
-            "text" : {
-               "name" : "1047 (gdbus)"
+               "name" : "1008 (accounts-daemon)"
             }
          },
          {
             "children" : [
                {
+                  "connectors" : {
+                     "style" : {
+                        "stroke" : "#a69b76"
+                     }
+                  },
                   "text" : {
-                     "name" : "12883 (dhclient)"
-                  }
-               },
-               {
-                  "text" : {
-                     "name" : "2022 (dnsmasq)"
+                     "name" : "1060 (avahi-daemon)"
                   }
                }
             ],
+            "connectors" : {
+               "style" : {
+                  "stroke" : "#2c8c5a"
+               }
+            },
             "text" : {
-               "name" : "1050 (NetworkManager)"
+               "name" : "1009 (avahi-daemon)"
             }
          },
          {
+            "connectors" : {
+               "style" : {
+                  "stroke" : "#9c3313"
+               }
+            },
             "text" : {
-               "name" : "1096 (snapd)"
+               "name" : "1029 (cron)"
             }
          },
          {
+            "connectors" : {
+               "style" : {
+                  "stroke" : "#9ed0f4"
+               }
+            },
             "text" : {
-               "name" : "1165 (thermald)"
+               "name" : "1032 (dbus-daemon)"
             }
          },
          {
+            "connectors" : {
+               "style" : {
+                  "stroke" : "#125478"
+               }
+            },
             "text" : {
-               "name" : "1174 (irqbalance)"
-            }
-         },
-         {
-            "text" : {
-               "name" : "1175 (snapd)"
-            }
-         },
-         {
-            "text" : {
-               "name" : "1176 (snapd)"
-            }
-         },
-         {
-            "text" : {
-               "name" : "1177 (snapd)"
-            }
-         },
-         {
-            "text" : {
-               "name" : "1179 (polkitd)"
-            }
-         },
-         {
-            "text" : {
-               "name" : "1182 (gmain)"
-            }
-         },
-         {
-            "text" : {
-               "name" : "1184 (gdbus)"
-            }
-         },
-         {
-            "text" : {
-               "name" : "1230 (core)"
-            }
-         },
-         {
-            "text" : {
-               "name" : "1231 (gmain)"
-            }
-         },
-         {
-            "text" : {
-               "name" : "1233 (gdbus)"
-            }
-         },
-         {
-            "text" : {
-               "name" : "1238 (beanstalkd)"
-            }
-         },
-         {
-            "text" : {
-               "name" : "1242 (bluetoothd)"
+               "name" : "1078 (cups-browsed)"
             }
          },
          {
             "children" : [
                {
+                  "connectors" : {
+                     "style" : {
+                        "stroke" : "#cd5216"
+                     }
+                  },
                   "text" : {
-                     "name" : "1276 (Xorg)"
+                     "name" : "1767 (dhclient)"
+                  }
+               },
+               {
+                  "connectors" : {
+                     "style" : {
+                        "stroke" : "#e1cc2f"
+                     }
+                  },
+                  "text" : {
+                     "name" : "1849 (dnsmasq)"
+                  }
+               }
+            ],
+            "connectors" : {
+               "style" : {
+                  "stroke" : "#9e248c"
+               }
+            },
+            "text" : {
+               "name" : "1079 (NetworkManager)"
+            }
+         },
+         {
+            "connectors" : {
+               "style" : {
+                  "stroke" : "#0f6c58"
+               }
+            },
+            "text" : {
+               "name" : "1081 (snapd)"
+            }
+         },
+         {
+            "connectors" : {
+               "style" : {
+                  "stroke" : "#391408"
+               }
+            },
+            "text" : {
+               "name" : "1172 (irqbalance)"
+            }
+         },
+         {
+            "connectors" : {
+               "style" : {
+                  "stroke" : "#6bbba4"
+               }
+            },
+            "text" : {
+               "name" : "1174 (polkitd)"
+            }
+         },
+         {
+            "children" : [
+               {
+                  "connectors" : {
+                     "style" : {
+                        "stroke" : "#e16731"
+                     }
+                  },
+                  "text" : {
+                     "name" : "1206 (Xorg)"
                   }
                },
                {
@@ -163,232 +158,145 @@ var simple_chart_config = {
                      {
                         "children" : [
                            {
+                              "connectors" : {
+                                 "style" : {
+                                    "stroke" : "#bb04e4"
+                                 }
+                              },
                               "text" : {
-                                 "name" : "13240 (sd_espeak)"
+                                 "name" : "1646 (upstart-udev-br)"
                               }
                            },
                            {
+                              "connectors" : {
+                                 "style" : {
+                                    "stroke" : "#4e23b5"
+                                 }
+                              },
                               "text" : {
-                                 "name" : "13242 (sd_espeak)"
+                                 "name" : "1659 (dbus-daemon)"
                               }
                            },
                            {
+                              "connectors" : {
+                                 "style" : {
+                                    "stroke" : "#433589"
+                                 }
+                              },
                               "text" : {
-                                 "name" : "13243 (sd_espeak)"
+                                 "name" : "1671 (window-stack-br)"
                               }
                            },
                            {
+                              "connectors" : {
+                                 "style" : {
+                                    "stroke" : "#3b82dc"
+                                 }
+                              },
                               "text" : {
-                                 "name" : "13244 (sd_espeak)"
+                                 "name" : "1703 (upstart-dbus-br)"
                               }
                            },
                            {
+                              "connectors" : {
+                                 "style" : {
+                                    "stroke" : "#516529"
+                                 }
+                              },
                               "text" : {
-                                 "name" : "13245 (threaded-ml)"
+                                 "name" : "1706 (upstart-dbus-br)"
                               }
                            },
                            {
+                              "connectors" : {
+                                 "style" : {
+                                    "stroke" : "#0004cc"
+                                 }
+                              },
                               "text" : {
-                                 "name" : "13246 (sd_generic)"
+                                 "name" : "1714 (upstart-file-br)"
                               }
                            },
                            {
+                              "connectors" : {
+                                 "style" : {
+                                    "stroke" : "#8d9339"
+                                 }
+                              },
                               "text" : {
-                                 "name" : "13247 (sd_generic)"
+                                 "name" : "1768 (gpg-agent)"
                               }
                            },
                            {
+                              "connectors" : {
+                                 "style" : {
+                                    "stroke" : "#65cc4d"
+                                 }
+                              },
                               "text" : {
-                                 "name" : "13248 (threaded-ml)"
+                                 "name" : "1780 (bamfdaemon)"
                               }
                            },
                            {
                               "children" : [
                                  {
+                                    "connectors" : {
+                                       "style" : {
+                                          "stroke" : "#6e3888"
+                                       }
+                                    },
                                     "text" : {
-                                       "name" : "13250 (sd_cicero)"
+                                       "name" : "1787 (dbus-daemon)"
                                     }
                                  }
                               ],
-                              "text" : {
-                                 "name" : "13249 (sd_cicero)"
-                              }
-                           },
-                           {
-                              "text" : {
-                                 "name" : "13251 (sd_cicero)"
-                              }
-                           },
-                           {
-                              "text" : {
-                                 "name" : "13252 (threaded-ml)"
-                              }
-                           },
-                           {
-                              "text" : {
-                                 "name" : "13253 (sd_dummy)"
-                              }
-                           },
-                           {
-                              "text" : {
-                                 "name" : "13254 (sd_dummy)"
-                              }
-                           },
-                           {
-                              "text" : {
-                                 "name" : "13255 (threaded-ml)"
-                              }
-                           },
-                           {
-                              "text" : {
-                                 "name" : "13256 (speech-dispatch)"
-                              }
-                           },
-                           {
-                              "text" : {
-                                 "name" : "13257 (speech-dispatch)"
-                              }
-                           },
-                           {
-                              "text" : {
-                                 "name" : "13436 (pool)"
-                              }
-                           },
-                           {
-                              "text" : {
-                                 "name" : "1806 (upstart-udev-br)"
-                              }
-                           },
-                           {
-                              "text" : {
-                                 "name" : "1808 (dbus-daemon)"
-                              }
-                           },
-                           {
-                              "text" : {
-                                 "name" : "1820 (window-stack-br)"
-                              }
-                           },
-                           {
-                              "text" : {
-                                 "name" : "1852 (upstart-dbus-br)"
-                              }
-                           },
-                           {
-                              "text" : {
-                                 "name" : "1854 (upstart-dbus-br)"
-                              }
-                           },
-                           {
-                              "text" : {
-                                 "name" : "1859 (upstart-file-br)"
-                              }
-                           },
-                           {
-                              "text" : {
-                                 "name" : "1872 (gpg-agent)"
-                              }
-                           },
-                           {
-                              "text" : {
-                                 "name" : "1879 (bamfdaemon)"
-                              }
-                           },
-                           {
-                              "children" : [
-                                 {
-                                    "text" : {
-                                       "name" : "1886 (dbus-daemon)"
-                                    }
+                              "connectors" : {
+                                 "style" : {
+                                    "stroke" : "#921af0"
                                  }
-                              ],
+                              },
                               "text" : {
-                                 "name" : "1881 (at-spi-bus-laun)"
+                                 "name" : "1782 (at-spi-bus-laun)"
                               }
                            },
                            {
+                              "connectors" : {
+                                 "style" : {
+                                    "stroke" : "#435674"
+                                 }
+                              },
                               "text" : {
-                                 "name" : "1882 (dconf worker)"
+                                 "name" : "1791 (at-spi2-registr)"
                               }
                            },
                            {
+                              "connectors" : {
+                                 "style" : {
+                                    "stroke" : "#28a497"
+                                 }
+                              },
                               "text" : {
-                                 "name" : "1883 (gmain)"
+                                 "name" : "1794 (gvfsd)"
                               }
                            },
                            {
+                              "connectors" : {
+                                 "style" : {
+                                    "stroke" : "#5de84d"
+                                 }
+                              },
                               "text" : {
-                                 "name" : "1885 (gdbus)"
+                                 "name" : "1801 (gvfsd-fuse)"
                               }
                            },
                            {
+                              "connectors" : {
+                                 "style" : {
+                                    "stroke" : "#67a34f"
+                                 }
+                              },
                               "text" : {
-                                 "name" : "1887 (gmain)"
-                              }
-                           },
-                           {
-                              "text" : {
-                                 "name" : "1890 (at-spi2-registr)"
-                              }
-                           },
-                           {
-                              "text" : {
-                                 "name" : "1891 (gdbus)"
-                              }
-                           },
-                           {
-                              "text" : {
-                                 "name" : "1892 (gmain)"
-                              }
-                           },
-                           {
-                              "text" : {
-                                 "name" : "1893 (gdbus)"
-                              }
-                           },
-                           {
-                              "text" : {
-                                 "name" : "1895 (gvfsd)"
-                              }
-                           },
-                           {
-                              "text" : {
-                                 "name" : "1896 (gmain)"
-                              }
-                           },
-                           {
-                              "text" : {
-                                 "name" : "1897 (gdbus)"
-                              }
-                           },
-                           {
-                              "text" : {
-                                 "name" : "1900 (gvfsd-fuse)"
-                              }
-                           },
-                           {
-                              "text" : {
-                                 "name" : "1902 (gvfsd-fuse)"
-                              }
-                           },
-                           {
-                              "text" : {
-                                 "name" : "1904 (gvfsd-fuse)"
-                              }
-                           },
-                           {
-                              "text" : {
-                                 "name" : "1905 (gmain)"
-                              }
-                           },
-                           {
-                              "text" : {
-                                 "name" : "1906 (gdbus)"
-                              }
-                           },
-                           {
-                              "text" : {
-                                 "name" : "1907 (gvfs-fuse-sub)"
+                                 "name" : "18159 (gvfsd-network)"
                               }
                            },
                            {
@@ -396,1134 +304,439 @@ var simple_chart_config = {
                                  {
                                     "children" : [
                                        {
+                                          "connectors" : {
+                                             "style" : {
+                                                "stroke" : "#4475b4"
+                                             }
+                                          },
                                           "text" : {
-                                             "name" : "1939 (xfwm4)"
+                                             "name" : "1840 (xfwm4)"
                                           }
                                        },
                                        {
+                                          "connectors" : {
+                                             "style" : {
+                                                "stroke" : "#ec7539"
+                                             }
+                                          },
                                           "text" : {
-                                             "name" : "1940 (dconf worker)"
-                                          }
-                                       },
-                                       {
-                                          "text" : {
-                                             "name" : "1941 (gmain)"
-                                          }
-                                       },
-                                       {
-                                          "text" : {
-                                             "name" : "1942 (gdbus)"
-                                          }
-                                       },
-                                       {
-                                          "text" : {
-                                             "name" : "1943 (Thunar)"
-                                          }
-                                       },
-                                       {
-                                          "text" : {
-                                             "name" : "1944 (dconf worker)"
-                                          }
-                                       },
-                                       {
-                                          "text" : {
-                                             "name" : "1945 (gmain)"
-                                          }
-                                       },
-                                       {
-                                          "text" : {
-                                             "name" : "1946 (gdbus)"
+                                             "name" : "1884 (Thunar)"
                                           }
                                        },
                                        {
                                           "children" : [
                                              {
+                                                "connectors" : {
+                                                   "style" : {
+                                                      "stroke" : "#b982cc"
+                                                   }
+                                                },
                                                 "text" : {
-                                                   "name" : "11259 (gnome-calculato)"
+                                                   "name" : "2159 (panel-14-action)"
                                                 }
                                              },
                                              {
+                                                "connectors" : {
+                                                   "style" : {
+                                                      "stroke" : "#f2e819"
+                                                   }
+                                                },
                                                 "text" : {
-                                                   "name" : "11260 (gmain)"
+                                                   "name" : "2160 (panel-23-batter)"
                                                 }
                                              },
                                              {
+                                                "connectors" : {
+                                                   "style" : {
+                                                      "stroke" : "#bfd651"
+                                                   }
+                                                },
                                                 "text" : {
-                                                   "name" : "11261 (gdbus)"
+                                                   "name" : "2161 (panel-19-pulsea)"
                                                 }
                                              },
                                              {
+                                                "connectors" : {
+                                                   "style" : {
+                                                      "stroke" : "#c869ea"
+                                                   }
+                                                },
                                                 "text" : {
-                                                   "name" : "11262 (dconf worker)"
+                                                   "name" : "2162 (panel-16-systra)"
                                                 }
                                              },
                                              {
+                                                "connectors" : {
+                                                   "style" : {
+                                                      "stroke" : "#b9ac41"
+                                                   }
+                                                },
                                                 "text" : {
-                                                   "name" : "13033 (DNS Res~er #147)"
-                                                }
-                                             },
-                                             {
-                                                "text" : {
-                                                   "name" : "13117 (DNS Res~er #148)"
-                                                }
-                                             },
-                                             {
-                                                "text" : {
-                                                   "name" : "13234 (DNS Res~er #149)"
-                                                }
-                                             },
-                                             {
-                                                "text" : {
-                                                   "name" : "13258 (speechd init)"
-                                                }
-                                             },
-                                             {
-                                                "text" : {
-                                                   "name" : "2255 (panel-14-action)"
-                                                }
-                                             },
-                                             {
-                                                "text" : {
-                                                   "name" : "2256 (panel-23-batter)"
-                                                }
-                                             },
-                                             {
-                                                "text" : {
-                                                   "name" : "2257 (panel-19-pulsea)"
-                                                }
-                                             },
-                                             {
-                                                "text" : {
-                                                   "name" : "2261 (dconf worker)"
-                                                }
-                                             },
-                                             {
-                                                "text" : {
-                                                   "name" : "2262 (gmain)"
-                                                }
-                                             },
-                                             {
-                                                "text" : {
-                                                   "name" : "2263 (gdbus)"
-                                                }
-                                             },
-                                             {
-                                                "text" : {
-                                                   "name" : "2265 (panel-16-systra)"
-                                                }
-                                             },
-                                             {
-                                                "text" : {
-                                                   "name" : "2266 (panel-12-power-)"
-                                                }
-                                             },
-                                             {
-                                                "text" : {
-                                                   "name" : "2267 (dconf worker)"
-                                                }
-                                             },
-                                             {
-                                                "text" : {
-                                                   "name" : "2268 (gmain)"
-                                                }
-                                             },
-                                             {
-                                                "text" : {
-                                                   "name" : "2269 (gdbus)"
-                                                }
-                                             },
-                                             {
-                                                "text" : {
-                                                   "name" : "2272 (dconf worker)"
-                                                }
-                                             },
-                                             {
-                                                "text" : {
-                                                   "name" : "2273 (gmain)"
-                                                }
-                                             },
-                                             {
-                                                "text" : {
-                                                   "name" : "2274 (gdbus)"
-                                                }
-                                             },
-                                             {
-                                                "text" : {
-                                                   "name" : "2276 (dconf worker)"
-                                                }
-                                             },
-                                             {
-                                                "text" : {
-                                                   "name" : "2277 (gmain)"
-                                                }
-                                             },
-                                             {
-                                                "text" : {
-                                                   "name" : "2278 (gdbus)"
-                                                }
-                                             },
-                                             {
-                                                "text" : {
-                                                   "name" : "2279 (gmain)"
-                                                }
-                                             },
-                                             {
-                                                "text" : {
-                                                   "name" : "2280 (gdbus)"
+                                                   "name" : "2163 (panel-12-power-)"
                                                 }
                                              },
                                              {
                                                 "children" : [
                                                    {
+                                                      "connectors" : {
+                                                         "style" : {
+                                                            "stroke" : "#add5e6"
+                                                         }
+                                                      },
                                                       "text" : {
-                                                         "name" : "13447 (StreamT~ns #237)"
-                                                      }
-                                                   },
-                                                   {
-                                                      "text" : {
-                                                         "name" : "2446 (Web Content)"
-                                                      }
-                                                   },
-                                                   {
-                                                      "text" : {
-                                                         "name" : "2449 (Chrome_ChildThr)"
-                                                      }
-                                                   },
-                                                   {
-                                                      "text" : {
-                                                         "name" : "2450 (JS Watchdog)"
-                                                      }
-                                                   },
-                                                   {
-                                                      "text" : {
-                                                         "name" : "2451 (JS Helper)"
-                                                      }
-                                                   },
-                                                   {
-                                                      "text" : {
-                                                         "name" : "2452 (JS Helper)"
-                                                      }
-                                                   },
-                                                   {
-                                                      "text" : {
-                                                         "name" : "2453 (JS Helper)"
-                                                      }
-                                                   },
-                                                   {
-                                                      "text" : {
-                                                         "name" : "2454 (JS Helper)"
-                                                      }
-                                                   },
-                                                   {
-                                                      "text" : {
-                                                         "name" : "2455 (JS Helper)"
-                                                      }
-                                                   },
-                                                   {
-                                                      "text" : {
-                                                         "name" : "2456 (JS Helper)"
-                                                      }
-                                                   },
-                                                   {
-                                                      "text" : {
-                                                         "name" : "2457 (JS Helper)"
-                                                      }
-                                                   },
-                                                   {
-                                                      "text" : {
-                                                         "name" : "2458 (JS Helper)"
-                                                      }
-                                                   },
-                                                   {
-                                                      "text" : {
-                                                         "name" : "2459 (Socket Thread)"
-                                                      }
-                                                   },
-                                                   {
-                                                      "text" : {
-                                                         "name" : "2460 (Hang Monitor)"
-                                                      }
-                                                   },
-                                                   {
-                                                      "text" : {
-                                                         "name" : "2461 (Timer)"
-                                                      }
-                                                   },
-                                                   {
-                                                      "text" : {
-                                                         "name" : "2462 (ImgDecoder #1)"
-                                                      }
-                                                   },
-                                                   {
-                                                      "text" : {
-                                                         "name" : "2463 (ImgDecoder #2)"
-                                                      }
-                                                   },
-                                                   {
-                                                      "text" : {
-                                                         "name" : "2464 (ImgDecoder #3)"
-                                                      }
-                                                   },
-                                                   {
-                                                      "text" : {
-                                                         "name" : "2465 (ImageIO)"
-                                                      }
-                                                   },
-                                                   {
-                                                      "text" : {
-                                                         "name" : "2466 (ImageBridgeChil)"
-                                                      }
-                                                   },
-                                                   {
-                                                      "text" : {
-                                                         "name" : "2467 (ProcessHangMoni)"
-                                                      }
-                                                   },
-                                                   {
-                                                      "text" : {
-                                                         "name" : "2468 (gmain)"
-                                                      }
-                                                   },
-                                                   {
-                                                      "text" : {
-                                                         "name" : "2469 (gdbus)"
-                                                      }
-                                                   },
-                                                   {
-                                                      "text" : {
-                                                         "name" : "2471 (HTML5 Parser)"
-                                                      }
-                                                   },
-                                                   {
-                                                      "text" : {
-                                                         "name" : "2583 (GMPThread)"
-                                                      }
-                                                   },
-                                                   {
-                                                      "text" : {
-                                                         "name" : "2629 (threaded-ml)"
-                                                      }
-                                                   },
-                                                   {
-                                                      "text" : {
-                                                         "name" : "6648 (MediaManager)"
-                                                      }
-                                                   },
-                                                   {
-                                                      "text" : {
-                                                         "name" : "6649 (Cameras IPC)"
-                                                      }
-                                                   },
-                                                   {
-                                                      "text" : {
-                                                         "name" : "6652 (ProcessThread)"
-                                                      }
-                                                   },
-                                                   {
-                                                      "text" : {
-                                                         "name" : "6653 (threaded-ml)"
-                                                      }
-                                                   },
-                                                   {
-                                                      "text" : {
-                                                         "name" : "6654 (webrtc_audio_mo)"
-                                                      }
-                                                   },
-                                                   {
-                                                      "text" : {
-                                                         "name" : "6655 (webrtc_audio_mo)"
+                                                         "name" : "2337 (Web Content)"
                                                       }
                                                    }
                                                 ],
+                                                "connectors" : {
+                                                   "style" : {
+                                                      "stroke" : "#c5b24f"
+                                                   }
+                                                },
                                                 "text" : {
-                                                   "name" : "2347 (firefox)"
+                                                   "name" : "2241 (firefox)"
                                                 }
                                              },
                                              {
+                                                "connectors" : {
+                                                   "style" : {
+                                                      "stroke" : "#131a72"
+                                                   }
+                                                },
                                                 "text" : {
-                                                   "name" : "2356 (Gecko_IOThread)"
-                                                }
-                                             },
-                                             {
-                                                "text" : {
-                                                   "name" : "2357 (Link Monitor)"
-                                                }
-                                             },
-                                             {
-                                                "text" : {
-                                                   "name" : "2358 (Socket Thread)"
-                                                }
-                                             },
-                                             {
-                                                "text" : {
-                                                   "name" : "2359 (JS Watchdog)"
-                                                }
-                                             },
-                                             {
-                                                "text" : {
-                                                   "name" : "2360 (JS Helper)"
-                                                }
-                                             },
-                                             {
-                                                "text" : {
-                                                   "name" : "2361 (JS Helper)"
-                                                }
-                                             },
-                                             {
-                                                "text" : {
-                                                   "name" : "2362 (JS Helper)"
-                                                }
-                                             },
-                                             {
-                                                "text" : {
-                                                   "name" : "2363 (JS Helper)"
-                                                }
-                                             },
-                                             {
-                                                "text" : {
-                                                   "name" : "2364 (JS Helper)"
-                                                }
-                                             },
-                                             {
-                                                "text" : {
-                                                   "name" : "2365 (JS Helper)"
-                                                }
-                                             },
-                                             {
-                                                "text" : {
-                                                   "name" : "2366 (JS Helper)"
-                                                }
-                                             },
-                                             {
-                                                "text" : {
-                                                   "name" : "2367 (JS Helper)"
-                                                }
-                                             },
-                                             {
-                                                "text" : {
-                                                   "name" : "2368 (Hang Monitor)"
-                                                }
-                                             },
-                                             {
-                                                "text" : {
-                                                   "name" : "2369 (gmain)"
-                                                }
-                                             },
-                                             {
-                                                "text" : {
-                                                   "name" : "2370 (gdbus)"
-                                                }
-                                             },
-                                             {
-                                                "text" : {
-                                                   "name" : "2373 (Cache2 I/O)"
-                                                }
-                                             },
-                                             {
-                                                "text" : {
-                                                   "name" : "2374 (Timer)"
-                                                }
-                                             },
-                                             {
-                                                "text" : {
-                                                   "name" : "2375 (DataStorage)"
-                                                }
-                                             },
-                                             {
-                                                "text" : {
-                                                   "name" : "2376 (GMPThread)"
-                                                }
-                                             },
-                                             {
-                                                "text" : {
-                                                   "name" : "2379 (Compositor)"
-                                                }
-                                             },
-                                             {
-                                                "text" : {
-                                                   "name" : "2380 (ImgDecoder #1)"
-                                                }
-                                             },
-                                             {
-                                                "text" : {
-                                                   "name" : "2381 (ImgDecoder #2)"
-                                                }
-                                             },
-                                             {
-                                                "text" : {
-                                                   "name" : "2382 (ImgDecoder #3)"
-                                                }
-                                             },
-                                             {
-                                                "text" : {
-                                                   "name" : "2383 (ImageIO)"
-                                                }
-                                             },
-                                             {
-                                                "text" : {
-                                                   "name" : "2384 (SoftwareVsyncTh)"
-                                                }
-                                             },
-                                             {
-                                                "text" : {
-                                                   "name" : "2387 (HTML5 Parser)"
-                                                }
-                                             },
-                                             {
-                                                "text" : {
-                                                   "name" : "2388 (IPDL Background)"
-                                                }
-                                             },
-                                             {
-                                                "text" : {
-                                                   "name" : "2391 (URL Classifier)"
-                                                }
-                                             },
-                                             {
-                                                "text" : {
-                                                   "name" : "2392 (firefox)"
-                                                }
-                                             },
-                                             {
-                                                "text" : {
-                                                   "name" : "2394 (ImageBridgeChil)"
-                                                }
-                                             },
-                                             {
-                                                "text" : {
-                                                   "name" : "2397 (DOM Worker)"
-                                                }
-                                             },
-                                             {
-                                                "text" : {
-                                                   "name" : "2413 (Cache I/O)"
-                                                }
-                                             },
-                                             {
-                                                "text" : {
-                                                   "name" : "2424 (DOM Worker)"
-                                                }
-                                             },
-                                             {
-                                                "text" : {
-                                                   "name" : "2425 (localStorage DB)"
-                                                }
-                                             },
-                                             {
-                                                "text" : {
-                                                   "name" : "2428 (mozStorage #1)"
-                                                }
-                                             },
-                                             {
-                                                "text" : {
-                                                   "name" : "2429 (mozStorage #2)"
-                                                }
-                                             },
-                                             {
-                                                "text" : {
-                                                   "name" : "2434 (mozStorage #3)"
-                                                }
-                                             },
-                                             {
-                                                "text" : {
-                                                   "name" : "2435 (dconf worker)"
-                                                }
-                                             },
-                                             {
-                                                "text" : {
-                                                   "name" : "2436 (Proxy R~olution)"
-                                                }
-                                             },
-                                             {
-                                                "text" : {
-                                                   "name" : "2437 (DataStorage)"
-                                                }
-                                             },
-                                             {
-                                                "text" : {
-                                                   "name" : "2440 (mozStorage #4)"
-                                                }
-                                             },
-                                             {
-                                                "text" : {
-                                                   "name" : "2444 (mozStorage #5)"
-                                                }
-                                             },
-                                             {
-                                                "text" : {
-                                                   "name" : "2445 (mozStorage #6)"
-                                                }
-                                             },
-                                             {
-                                                "text" : {
-                                                   "name" : "2447 (ProcessHangMoni)"
-                                                }
-                                             },
-                                             {
-                                                "text" : {
-                                                   "name" : "2560 (DOM Worker)"
-                                                }
-                                             },
-                                             {
-                                                "text" : {
-                                                   "name" : "3864 (nautilus)"
-                                                }
-                                             },
-                                             {
-                                                "text" : {
-                                                   "name" : "3865 (gmain)"
-                                                }
-                                             },
-                                             {
-                                                "text" : {
-                                                   "name" : "3866 (gdbus)"
-                                                }
-                                             },
-                                             {
-                                                "text" : {
-                                                   "name" : "3868 (dconf worker)"
-                                                }
-                                             },
-                                             {
-                                                "text" : {
-                                                   "name" : "6650 (VideoCapture)"
-                                                }
-                                             },
-                                             {
-                                                "text" : {
-                                                   "name" : "6651 (ProcessThread)"
-                                                }
-                                             },
-                                             {
-                                                "text" : {
-                                                   "name" : "7102 (mozStorage #7)"
+                                                   "name" : "2721 (nautilus)"
                                                 }
                                              }
                                           ],
+                                          "connectors" : {
+                                             "style" : {
+                                                "stroke" : "#62dde7"
+                                             }
+                                          },
                                           "text" : {
-                                             "name" : "1949 (xfce4-panel)"
+                                             "name" : "1891 (xfce4-panel)"
                                           }
                                        },
                                        {
+                                          "connectors" : {
+                                             "style" : {
+                                                "stroke" : "#97cadd"
+                                             }
+                                          },
                                           "text" : {
-                                             "name" : "1959 (dconf worker)"
+                                             "name" : "1930 (xfdesktop)"
                                           }
                                        },
                                        {
+                                          "connectors" : {
+                                             "style" : {
+                                                "stroke" : "#5084df"
+                                             }
+                                          },
                                           "text" : {
-                                             "name" : "1960 (gmain)"
+                                             "name" : "2020 (update-notifier)"
                                           }
                                        },
                                        {
+                                          "connectors" : {
+                                             "style" : {
+                                                "stroke" : "#1df648"
+                                             }
+                                          },
                                           "text" : {
-                                             "name" : "1961 (gdbus)"
+                                             "name" : "2021 (nm-applet)"
                                           }
                                        },
                                        {
+                                          "connectors" : {
+                                             "style" : {
+                                                "stroke" : "#36371f"
+                                             }
+                                          },
                                           "text" : {
-                                             "name" : "1962 (xfdesktop)"
+                                             "name" : "2033 (xscreensaver)"
                                           }
                                        },
                                        {
+                                          "connectors" : {
+                                             "style" : {
+                                                "stroke" : "#070088"
+                                             }
+                                          },
                                           "text" : {
-                                             "name" : "1967 (dconf worker)"
+                                             "name" : "2050 (deja-dup-monito)"
                                           }
                                        },
                                        {
+                                          "connectors" : {
+                                             "style" : {
+                                                "stroke" : "#f13936"
+                                             }
+                                          },
                                           "text" : {
-                                             "name" : "1968 (gmain)"
+                                             "name" : "2051 (zeitgeist-datah)"
                                           }
                                        },
                                        {
+                                          "connectors" : {
+                                             "style" : {
+                                                "stroke" : "#b3e68b"
+                                             }
+                                          },
                                           "text" : {
-                                             "name" : "1969 (gdbus)"
+                                             "name" : "2052 (polkit-gnome-au)"
                                           }
                                        },
                                        {
+                                          "connectors" : {
+                                             "style" : {
+                                                "stroke" : "#1a2cbd"
+                                             }
+                                          },
                                           "text" : {
-                                             "name" : "1982 (update-notifier)"
-                                          }
-                                       },
-                                       {
-                                          "text" : {
-                                             "name" : "1983 (nm-applet)"
-                                          }
-                                       },
-                                       {
-                                          "text" : {
-                                             "name" : "1990 (gmain)"
-                                          }
-                                       },
-                                       {
-                                          "text" : {
-                                             "name" : "1991 (gdbus)"
-                                          }
-                                       },
-                                       {
-                                          "text" : {
-                                             "name" : "1992 (dconf worker)"
-                                          }
-                                       },
-                                       {
-                                          "text" : {
-                                             "name" : "1993 (gmain)"
-                                          }
-                                       },
-                                       {
-                                          "text" : {
-                                             "name" : "1994 (gdbus)"
-                                          }
-                                       },
-                                       {
-                                          "text" : {
-                                             "name" : "1995 (dconf worker)"
-                                          }
-                                       },
-                                       {
-                                          "text" : {
-                                             "name" : "2008 (xscreensaver)"
-                                          }
-                                       },
-                                       {
-                                          "text" : {
-                                             "name" : "2023 (deja-dup-monito)"
-                                          }
-                                       },
-                                       {
-                                          "text" : {
-                                             "name" : "2069 (zeitgeist-datah)"
-                                          }
-                                       },
-                                       {
-                                          "text" : {
-                                             "name" : "2070 (polkit-gnome-au)"
-                                          }
-                                       },
-                                       {
-                                          "text" : {
-                                             "name" : "2074 (applet.py)"
-                                          }
-                                       },
-                                       {
-                                          "text" : {
-                                             "name" : "2075 (gmain)"
-                                          }
-                                       },
-                                       {
-                                          "text" : {
-                                             "name" : "2076 (gdbus)"
-                                          }
-                                       },
-                                       {
-                                          "text" : {
-                                             "name" : "2077 (dconf worker)"
-                                          }
-                                       },
-                                       {
-                                          "text" : {
-                                             "name" : "2078 (gmain)"
-                                          }
-                                       },
-                                       {
-                                          "text" : {
-                                             "name" : "2079 (gdbus)"
-                                          }
-                                       },
-                                       {
-                                          "text" : {
-                                             "name" : "2091 (gmain)"
-                                          }
-                                       },
-                                       {
-                                          "text" : {
-                                             "name" : "2092 (pool)"
-                                          }
-                                       },
-                                       {
-                                          "text" : {
-                                             "name" : "2093 (gdbus)"
-                                          }
-                                       },
-                                       {
-                                          "text" : {
-                                             "name" : "2308 (gmain)"
-                                          }
-                                       },
-                                       {
-                                          "text" : {
-                                             "name" : "2331 (pool)"
-                                          }
-                                       },
-                                       {
-                                          "text" : {
-                                             "name" : "2332 (pool)"
-                                          }
-                                       },
-                                       {
-                                          "text" : {
-                                             "name" : "2333 (pool)"
+                                             "name" : "2053 (applet.py)"
                                           }
                                        }
                                     ],
+                                    "connectors" : {
+                                       "style" : {
+                                          "stroke" : "#e8bed8"
+                                       }
+                                    },
                                     "text" : {
-                                       "name" : "1927 (xfce4-session)"
-                                    }
-                                 },
-                                 {
-                                    "text" : {
-                                       "name" : "1928 (dconf worker)"
-                                    }
-                                 },
-                                 {
-                                    "text" : {
-                                       "name" : "1929 (gmain)"
-                                    }
-                                 },
-                                 {
-                                    "text" : {
-                                       "name" : "1930 (gdbus)"
+                                       "name" : "1828 (xfce4-session)"
                                     }
                                  }
                               ],
+                              "connectors" : {
+                                 "style" : {
+                                    "stroke" : "#5ba1b6"
+                                 }
+                              },
                               "text" : {
-                                 "name" : "1916 (sh)"
+                                 "name" : "1817 (sh)"
                               }
                            },
                            {
+                              "connectors" : {
+                                 "style" : {
+                                    "stroke" : "#c33902"
+                                 }
+                              },
                               "text" : {
-                                 "name" : "1932 (xfconfd)"
+                                 "name" : "18184 (gvfsd-dnssd)"
                               }
                            },
                            {
+                              "connectors" : {
+                                 "style" : {
+                                    "stroke" : "#a18906"
+                                 }
+                              },
                               "text" : {
-                                 "name" : "1936 (ssh-agent)"
+                                 "name" : "1833 (xfconfd)"
                               }
                            },
                            {
+                              "connectors" : {
+                                 "style" : {
+                                    "stroke" : "#0126fd"
+                                 }
+                              },
                               "text" : {
-                                 "name" : "1950 (xfsettingsd)"
+                                 "name" : "1837 (ssh-agent)"
                               }
                            },
                            {
+                              "connectors" : {
+                                 "style" : {
+                                    "stroke" : "#4adbb4"
+                                 }
+                              },
                               "text" : {
-                                 "name" : "1951 (dconf worker)"
+                                 "name" : "1893 (xfsettingsd)"
                               }
                            },
                            {
+                              "connectors" : {
+                                 "style" : {
+                                    "stroke" : "#696234"
+                                 }
+                              },
                               "text" : {
-                                 "name" : "1952 (gmain)"
+                                 "name" : "2017 (xfce4-power-man)"
                               }
                            },
                            {
+                              "connectors" : {
+                                 "style" : {
+                                    "stroke" : "#72546d"
+                                 }
+                              },
                               "text" : {
-                                 "name" : "1953 (gdbus)"
+                                 "name" : "2029 (xfce4-power-man)"
                               }
                            },
                            {
+                              "connectors" : {
+                                 "style" : {
+                                    "stroke" : "#2887d3"
+                                 }
+                              },
                               "text" : {
-                                 "name" : "1973 (xfce4-power-man)"
+                                 "name" : "2041 (xfce4-volumed)"
                               }
                            },
                            {
+                              "connectors" : {
+                                 "style" : {
+                                    "stroke" : "#33a101"
+                                 }
+                              },
                               "text" : {
-                                 "name" : "1974 (dconf worker)"
+                                 "name" : "2056 (core)"
                               }
                            },
                            {
+                              "connectors" : {
+                                 "style" : {
+                                    "stroke" : "#f00abf"
+                                 }
+                              },
                               "text" : {
-                                 "name" : "1975 (gmain)"
+                                 "name" : "2071 (pulseaudio)"
                               }
                            },
                            {
+                              "connectors" : {
+                                 "style" : {
+                                    "stroke" : "#c96661"
+                                 }
+                              },
                               "text" : {
-                                 "name" : "1976 (gdbus)"
+                                 "name" : "2083 (gvfs-udisks2-vo)"
                               }
                            },
                            {
+                              "connectors" : {
+                                 "style" : {
+                                    "stroke" : "#012a1a"
+                                 }
+                              },
                               "text" : {
-                                 "name" : "1985 (xfce4-power-man)"
+                                 "name" : "2108 (gvfs-mtp-volume)"
                               }
                            },
                            {
+                              "connectors" : {
+                                 "style" : {
+                                    "stroke" : "#034b23"
+                                 }
+                              },
                               "text" : {
-                                 "name" : "1986 (dconf worker)"
+                                 "name" : "2113 (gvfs-afc-volume)"
                               }
                            },
                            {
+                              "connectors" : {
+                                 "style" : {
+                                    "stroke" : "#09cb49"
+                                 }
+                              },
                               "text" : {
-                                 "name" : "1988 (gmain)"
-                              }
-                           },
-                           {
-                              "text" : {
-                                 "name" : "1989 (gdbus)"
-                              }
-                           },
-                           {
-                              "text" : {
-                                 "name" : "2006 (pulseaudio)"
-                              }
-                           },
-                           {
-                              "text" : {
-                                 "name" : "2009 (xfce4-volumed)"
-                              }
-                           },
-                           {
-                              "text" : {
-                                 "name" : "2010 (dconf worker)"
-                              }
-                           },
-                           {
-                              "text" : {
-                                 "name" : "2011 (gmain)"
-                              }
-                           },
-                           {
-                              "text" : {
-                                 "name" : "2012 (gdbus)"
-                              }
-                           },
-                           {
-                              "text" : {
-                                 "name" : "2019 (alsa-sink-HDMI )"
-                              }
-                           },
-                           {
-                              "text" : {
-                                 "name" : "2020 (alsa-sink-ALC32)"
-                              }
-                           },
-                           {
-                              "text" : {
-                                 "name" : "2021 (alsa-source-ALC)"
-                              }
-                           },
-                           {
-                              "text" : {
-                                 "name" : "2084 (core)"
+                                 "name" : "2119 (gvfs-goa-volume)"
                               }
                            },
                            {
                               "children" : [
                                  {
+                                    "connectors" : {
+                                       "style" : {
+                                          "stroke" : "#8616a4"
+                                       }
+                                    },
                                     "text" : {
-                                       "name" : "2321 (zeitgeist-daemo)"
-                                    }
-                                 },
-                                 {
-                                    "text" : {
-                                       "name" : "2322 (gmain)"
-                                    }
-                                 },
-                                 {
-                                    "text" : {
-                                       "name" : "2323 (gdbus)"
+                                       "name" : "2131 (zeitgeist-daemo)"
                                     }
                                  }
                               ],
+                              "connectors" : {
+                                 "style" : {
+                                    "stroke" : "#3b0007"
+                                 }
+                              },
                               "text" : {
-                                 "name" : "2095 (sh)"
+                                 "name" : "2127 (sh)"
                               }
                            },
                            {
+                              "connectors" : {
+                                 "style" : {
+                                    "stroke" : "#6f72db"
+                                 }
+                              },
                               "text" : {
-                                 "name" : "2097 (core)"
+                                 "name" : "2135 (goa-daemon)"
                               }
                            },
                            {
+                              "connectors" : {
+                                 "style" : {
+                                    "stroke" : "#5c9ae2"
+                                 }
+                              },
                               "text" : {
-                                 "name" : "2098 (core)"
+                                 "name" : "2153 (zeitgeist-fts)"
                               }
                            },
                            {
+                              "connectors" : {
+                                 "style" : {
+                                    "stroke" : "#b04d85"
+                                 }
+                              },
                               "text" : {
-                                 "name" : "2101 (gvfs-udisks2-vo)"
+                                 "name" : "2202 (goa-identity-se)"
                               }
                            },
                            {
+                              "connectors" : {
+                                 "style" : {
+                                    "stroke" : "#b13e0f"
+                                 }
+                              },
                               "text" : {
-                                 "name" : "2103 (core)"
+                                 "name" : "2210 (gvfs-gphoto2-vo)"
                               }
                            },
                            {
+                              "connectors" : {
+                                 "style" : {
+                                    "stroke" : "#f08875"
+                                 }
+                              },
                               "text" : {
-                                 "name" : "2105 (core)"
+                                 "name" : "2219 (gvfsd-trash)"
                               }
                            },
                            {
+                              "connectors" : {
+                                 "style" : {
+                                    "stroke" : "#d2891f"
+                                 }
+                              },
                               "text" : {
-                                 "name" : "2106 (core)"
+                                 "name" : "2226 (gvfsd-metadata)"
                               }
                            },
                            {
+                              "connectors" : {
+                                 "style" : {
+                                    "stroke" : "#ec0ce9"
+                                 }
+                              },
                               "text" : {
-                                 "name" : "2118 (gmain)"
-                              }
-                           },
-                           {
-                              "text" : {
-                                 "name" : "2119 (gdbus)"
-                              }
-                           },
-                           {
-                              "text" : {
-                                 "name" : "2239 (gvfs-mtp-volume)"
-                              }
-                           },
-                           {
-                              "text" : {
-                                 "name" : "2240 (gmain)"
-                              }
-                           },
-                           {
-                              "text" : {
-                                 "name" : "2242 (gdbus)"
-                              }
-                           },
-                           {
-                              "text" : {
-                                 "name" : "2244 (gvfs-afc-volume)"
-                              }
-                           },
-                           {
-                              "text" : {
-                                 "name" : "2245 (gvfs-afc-volume)"
-                              }
-                           },
-                           {
-                              "text" : {
-                                 "name" : "2246 (gmain)"
-                              }
-                           },
-                           {
-                              "text" : {
-                                 "name" : "2248 (gdbus)"
-                              }
-                           },
-                           {
-                              "text" : {
-                                 "name" : "2250 (gvfs-goa-volume)"
-                              }
-                           },
-                           {
-                              "text" : {
-                                 "name" : "2251 (gmain)"
-                              }
-                           },
-                           {
-                              "text" : {
-                                 "name" : "2252 (gdbus)"
-                              }
-                           },
-                           {
-                              "text" : {
-                                 "name" : "2254 (goa-daemon)"
-                              }
-                           },
-                           {
-                              "text" : {
-                                 "name" : "2284 (goa-daemon)"
-                              }
-                           },
-                           {
-                              "text" : {
-                                 "name" : "2285 (gmain)"
-                              }
-                           },
-                           {
-                              "text" : {
-                                 "name" : "2287 (gdbus)"
-                              }
-                           },
-                           {
-                              "text" : {
-                                 "name" : "2288 (dconf worker)"
-                              }
-                           },
-                           {
-                              "text" : {
-                                 "name" : "2291 (goa-identity-se)"
-                              }
-                           },
-                           {
-                              "text" : {
-                                 "name" : "2292 (gmain)"
-                              }
-                           },
-                           {
-                              "text" : {
-                                 "name" : "2294 (gdbus)"
-                              }
-                           },
-                           {
-                              "text" : {
-                                 "name" : "2296 (pool)"
-                              }
-                           },
-                           {
-                              "text" : {
-                                 "name" : "2298 (gvfs-gphoto2-vo)"
-                              }
-                           },
-                           {
-                              "text" : {
-                                 "name" : "2300 (gmain)"
-                              }
-                           },
-                           {
-                              "text" : {
-                                 "name" : "2302 (gdbus)"
-                              }
-                           },
-                           {
-                              "text" : {
-                                 "name" : "2307 (gvfsd-trash)"
-                              }
-                           },
-                           {
-                              "text" : {
-                                 "name" : "2309 (gmain)"
-                              }
-                           },
-                           {
-                              "text" : {
-                                 "name" : "2310 (gdbus)"
-                              }
-                           },
-                           {
-                              "text" : {
-                                 "name" : "2314 (gvfsd-metadata)"
-                              }
-                           },
-                           {
-                              "text" : {
-                                 "name" : "2315 (gmain)"
-                              }
-                           },
-                           {
-                              "text" : {
-                                 "name" : "2316 (gdbus)"
-                              }
-                           },
-                           {
-                              "text" : {
-                                 "name" : "2328 (zeitgeist-fts)"
-                              }
-                           },
-                           {
-                              "text" : {
-                                 "name" : "2343 (gmain)"
-                              }
-                           },
-                           {
-                              "text" : {
-                                 "name" : "2344 (gdbus)"
-                              }
-                           },
-                           {
-                              "text" : {
-                                 "name" : "2386 (gconfd-2)"
+                                 "name" : "2275 (gconfd-2)"
                               }
                            },
                            {
@@ -1531,507 +744,335 @@ var simple_chart_config = {
                                  {
                                     "children" : [
                                        {
+                                          "connectors" : {
+                                             "style" : {
+                                                "stroke" : "#9015b6"
+                                             }
+                                          },
                                           "text" : {
-                                             "name" : "13449 (generator)"
+                                             "name" : "25313 (generator)"
                                           }
                                        }
                                     ],
+                                    "connectors" : {
+                                       "style" : {
+                                          "stroke" : "#599ccc"
+                                       }
+                                    },
                                     "text" : {
-                                       "name" : "4788 (bash)"
-                                    }
-                                 },
-                                 {
-                                    "text" : {
-                                       "name" : "7296 (bash)"
+                                       "name" : "2407 (bash)"
                                     }
                                  }
                               ],
+                              "connectors" : {
+                                 "style" : {
+                                    "stroke" : "#fe57cc"
+                                 }
+                              },
                               "text" : {
-                                 "name" : "2487 (gnome-terminal-)"
-                              }
-                           },
-                           {
-                              "text" : {
-                                 "name" : "2488 (dconf worker)"
-                              }
-                           },
-                           {
-                              "text" : {
-                                 "name" : "2489 (gmain)"
-                              }
-                           },
-                           {
-                              "text" : {
-                                 "name" : "2490 (gdbus)"
+                                 "name" : "2402 (gnome-terminal-)"
                               }
                            },
                            {
                               "children" : [
                                  {
+                                    "connectors" : {
+                                       "style" : {
+                                          "stroke" : "#8547be"
+                                       }
+                                    },
                                     "text" : {
-                                       "name" : "3845 (plugin_host)"
-                                    }
-                                 },
-                                 {
-                                    "text" : {
-                                       "name" : "3847 (thread_queue)"
-                                    }
-                                 },
-                                 {
-                                    "text" : {
-                                       "name" : "3848 (process_status)"
+                                       "name" : "2504 (plugin_host)"
                                     }
                                  }
                               ],
+                              "connectors" : {
+                                 "style" : {
+                                    "stroke" : "#e0a3d8"
+                                 }
+                              },
                               "text" : {
-                                 "name" : "3833 (sublime_text)"
+                                 "name" : "2491 (sublime_text)"
                               }
                            },
                            {
+                              "connectors" : {
+                                 "style" : {
+                                    "stroke" : "#c4d326"
+                                 }
+                              },
                               "text" : {
-                                 "name" : "3834 (dconf worker)"
+                                 "name" : "2728 (dconf-service)"
                               }
                            },
                            {
+                              "connectors" : {
+                                 "style" : {
+                                    "stroke" : "#c985e4"
+                                 }
+                              },
                               "text" : {
-                                 "name" : "3835 (gmain)"
-                              }
-                           },
-                           {
-                              "text" : {
-                                 "name" : "3836 (gdbus)"
-                              }
-                           },
-                           {
-                              "text" : {
-                                 "name" : "3838 (thread_queue)"
-                              }
-                           },
-                           {
-                              "text" : {
-                                 "name" : "3839 (io_worker)"
-                              }
-                           },
-                           {
-                              "text" : {
-                                 "name" : "3840 (io_worker)"
-                              }
-                           },
-                           {
-                              "text" : {
-                                 "name" : "3844 (shm_reader)"
-                              }
-                           },
-                           {
-                              "text" : {
-                                 "name" : "3846 (process_status)"
-                              }
-                           },
-                           {
-                              "text" : {
-                                 "name" : "3850 (sublime_text)"
-                              }
-                           },
-                           {
-                              "text" : {
-                                 "name" : "3871 (dconf-service)"
-                              }
-                           },
-                           {
-                              "text" : {
-                                 "name" : "3872 (gmain)"
-                              }
-                           },
-                           {
-                              "text" : {
-                                 "name" : "3873 (gdbus)"
-                              }
-                           },
-                           {
-                              "text" : {
-                                 "name" : "3885 (gvfsd-burn)"
-                              }
-                           },
-                           {
-                              "text" : {
-                                 "name" : "3886 (gmain)"
-                              }
-                           },
-                           {
-                              "text" : {
-                                 "name" : "3887 (gdbus)"
-                              }
-                           },
-                           {
-                              "text" : {
-                                 "name" : "6605 (gvfsd-network)"
-                              }
-                           },
-                           {
-                              "text" : {
-                                 "name" : "6608 (gmain)"
-                              }
-                           },
-                           {
-                              "text" : {
-                                 "name" : "6609 (gdbus)"
-                              }
-                           },
-                           {
-                              "text" : {
-                                 "name" : "6613 (dconf worker)"
-                              }
-                           },
-                           {
-                              "text" : {
-                                 "name" : "6628 (gvfsd-dnssd)"
-                              }
-                           },
-                           {
-                              "text" : {
-                                 "name" : "6629 (gmain)"
-                              }
-                           },
-                           {
-                              "text" : {
-                                 "name" : "6630 (gdbus)"
-                              }
-                           },
-                           {
-                              "text" : {
-                                 "name" : "9133 (evince)"
-                              }
-                           },
-                           {
-                              "text" : {
-                                 "name" : "9135 (gmain)"
-                              }
-                           },
-                           {
-                              "text" : {
-                                 "name" : "9136 (gdbus)"
-                              }
-                           },
-                           {
-                              "text" : {
-                                 "name" : "9139 (evinced)"
-                              }
-                           },
-                           {
-                              "text" : {
-                                 "name" : "9140 (gmain)"
-                              }
-                           },
-                           {
-                              "text" : {
-                                 "name" : "9141 (gdbus)"
-                              }
-                           },
-                           {
-                              "text" : {
-                                 "name" : "9142 (dconf worker)"
-                              }
-                           },
-                           {
-                              "text" : {
-                                 "name" : "9152 (EvJobScheduler)"
+                                 "name" : "2740 (gvfsd-burn)"
                               }
                            }
                         ],
+                        "connectors" : {
+                           "style" : {
+                              "stroke" : "#d8f66d"
+                           }
+                        },
                         "text" : {
-                           "name" : "1682 (upstart)"
+                           "name" : "1579 (upstart)"
                         }
                      }
                   ],
+                  "connectors" : {
+                     "style" : {
+                        "stroke" : "#4f4976"
+                     }
+                  },
                   "text" : {
-                     "name" : "1529 (lightdm)"
-                  }
-               },
-               {
-                  "text" : {
-                     "name" : "1666 (gmain)"
-                  }
-               },
-               {
-                  "text" : {
-                     "name" : "1667 (gdbus)"
+                     "name" : "1373 (lightdm)"
                   }
                }
             ],
+            "connectors" : {
+               "style" : {
+                  "stroke" : "#ed3682"
+               }
+            },
             "text" : {
-               "name" : "1251 (lightdm)"
+               "name" : "1190 (lightdm)"
             }
          },
          {
+            "connectors" : {
+               "style" : {
+                  "stroke" : "#584697"
+               }
+            },
             "text" : {
-               "name" : "1253 (snapd)"
+               "name" : "1191 (bluetoothd)"
             }
          },
          {
+            "connectors" : {
+               "style" : {
+                  "stroke" : "#0fa0b3"
+               }
+            },
             "text" : {
-               "name" : "1254 (snapd)"
+               "name" : "1195 (core)"
             }
          },
          {
+            "connectors" : {
+               "style" : {
+                  "stroke" : "#5b1f0c"
+               }
+            },
             "text" : {
-               "name" : "1255 (snapd)"
+               "name" : "1220 (beanstalkd)"
             }
          },
          {
+            "connectors" : {
+               "style" : {
+                  "stroke" : "#a8a453"
+               }
+            },
             "text" : {
-               "name" : "1256 (snapd)"
+               "name" : "1253 (wpa_supplicant)"
             }
          },
          {
+            "connectors" : {
+               "style" : {
+                  "stroke" : "#678676"
+               }
+            },
             "text" : {
-               "name" : "1267 (gmain)"
+               "name" : "1263 (nvidia-persiste)"
             }
          },
          {
+            "connectors" : {
+               "style" : {
+                  "stroke" : "#c04b4b"
+               }
+            },
             "text" : {
-               "name" : "1269 (gdbus)"
+               "name" : "1405 (agetty)"
             }
          },
          {
+            "connectors" : {
+               "style" : {
+                  "stroke" : "#e61550"
+               }
+            },
             "text" : {
-               "name" : "1285 (wpa_supplicant)"
+               "name" : "1490 (rtkit-daemon)"
             }
          },
          {
+            "connectors" : {
+               "style" : {
+                  "stroke" : "#cbedc6"
+               }
+            },
             "text" : {
-               "name" : "1313 (core)"
+               "name" : "1500 (upowerd)"
             }
          },
          {
+            "connectors" : {
+               "style" : {
+                  "stroke" : "#b8bc10"
+               }
+            },
             "text" : {
-               "name" : "1314 (core)"
-            }
-         },
-         {
-            "text" : {
-               "name" : "1322 (core)"
-            }
-         },
-         {
-            "text" : {
-               "name" : "1327 (core)"
-            }
-         },
-         {
-            "text" : {
-               "name" : "1328 (core)"
-            }
-         },
-         {
-            "text" : {
-               "name" : "1331 (core)"
-            }
-         },
-         {
-            "text" : {
-               "name" : "1332 (core)"
-            }
-         },
-         {
-            "text" : {
-               "name" : "1334 (core)"
-            }
-         },
-         {
-            "text" : {
-               "name" : "1342 (nvidia-persiste)"
-            }
-         },
-         {
-            "text" : {
-               "name" : "1356 (agetty)"
-            }
-         },
-         {
-            "text" : {
-               "name" : "1574 (rtkit-daemon)"
-            }
-         },
-         {
-            "text" : {
-               "name" : "1591 (rtkit-daemon)"
-            }
-         },
-         {
-            "text" : {
-               "name" : "1592 (rtkit-daemon)"
-            }
-         },
-         {
-            "text" : {
-               "name" : "1628 (upowerd)"
-            }
-         },
-         {
-            "text" : {
-               "name" : "1630 (gmain)"
-            }
-         },
-         {
-            "text" : {
-               "name" : "1631 (gdbus)"
-            }
-         },
-         {
-            "text" : {
-               "name" : "1655 (colord)"
-            }
-         },
-         {
-            "text" : {
-               "name" : "1657 (gmain)"
-            }
-         },
-         {
-            "text" : {
-               "name" : "1659 (gdbus)"
+               "name" : "1546 (colord)"
             }
          },
          {
             "children" : [
                {
+                  "connectors" : {
+                     "style" : {
+                        "stroke" : "#2fabc6"
+                     }
+                  },
                   "text" : {
-                     "name" : "1674 ((sd-pam))"
+                     "name" : "1571 ((sd-pam))"
                   }
                }
             ],
-            "text" : {
-               "name" : "1672 (systemd)"
-            }
-         },
-         {
-            "text" : {
-               "name" : "1680 (gnome-keyring-d)"
-            }
-         },
-         {
-            "text" : {
-               "name" : "1681 (gmain)"
-            }
-         },
-         {
-            "text" : {
-               "name" : "1855 (timer)"
-            }
-         },
-         {
-            "text" : {
-               "name" : "1864 (gdbus)"
-            }
-         },
-         {
-            "text" : {
-               "name" : "2123 (udisksd)"
-            }
-         },
-         {
-            "text" : {
-               "name" : "2232 (gmain)"
-            }
-         },
-         {
-            "text" : {
-               "name" : "2234 (gdbus)"
-            }
-         },
-         {
-            "text" : {
-               "name" : "2235 (probing-thread)"
-            }
-         },
-         {
-            "text" : {
-               "name" : "2236 (cleanup)"
-            }
-         },
-         {
-            "text" : {
-               "name" : "240 (systemd-journal)"
-            }
-         },
-         {
-            "text" : {
-               "name" : "263 (systemd-udevd)"
-            }
-         },
-         {
-            "text" : {
-               "name" : "2952 (cups-browsed)"
-            }
-         },
-         {
-            "text" : {
-               "name" : "2954 (gmain)"
-            }
-         },
-         {
-            "text" : {
-               "name" : "2955 (gdbus)"
-            }
-         },
-         {
-            "text" : {
-               "name" : "888 (systemd-timesyn)"
-            }
-         },
-         {
-            "text" : {
-               "name" : "893 (sd-resolve)"
-            }
-         },
-         {
-            "text" : {
-               "name" : "966 (whoopsie)"
-            }
-         },
-         {
-            "text" : {
-               "name" : "973 (ModemManager)"
-            }
-         },
-         {
-            "text" : {
-               "name" : "975 (rsyslogd)"
-            }
-         },
-         {
-            "text" : {
-               "name" : "982 (cron)"
-            }
-         },
-         {
-            "children" : [
-               {
-                  "text" : {
-                     "name" : "1014 (avahi-daemon)"
-                  }
+            "connectors" : {
+               "style" : {
+                  "stroke" : "#b1040d"
                }
-            ],
+            },
             "text" : {
-               "name" : "986 (avahi-daemon)"
+               "name" : "1569 (systemd)"
             }
          },
          {
+            "connectors" : {
+               "style" : {
+                  "stroke" : "#c992ad"
+               }
+            },
             "text" : {
-               "name" : "988 (thermald)"
+               "name" : "1577 (gnome-keyring-d)"
             }
          },
          {
+            "connectors" : {
+               "style" : {
+                  "stroke" : "#7d6dcc"
+               }
+            },
             "text" : {
-               "name" : "990 (systemd-logind)"
+               "name" : "2097 (udisksd)"
             }
          },
          {
+            "connectors" : {
+               "style" : {
+                  "stroke" : "#8916f1"
+               }
+            },
             "text" : {
-               "name" : "998 (acpid)"
+               "name" : "237 (systemd-journal)"
+            }
+         },
+         {
+            "connectors" : {
+               "style" : {
+                  "stroke" : "#5cfd78"
+               }
+            },
+            "text" : {
+               "name" : "265 (systemd-udevd)"
+            }
+         },
+         {
+            "connectors" : {
+               "style" : {
+                  "stroke" : "#53be43"
+               }
+            },
+            "text" : {
+               "name" : "870 (systemd-timesyn)"
+            }
+         },
+         {
+            "connectors" : {
+               "style" : {
+                  "stroke" : "#1e25d7"
+               }
+            },
+            "text" : {
+               "name" : "963 (acpid)"
+            }
+         },
+         {
+            "connectors" : {
+               "style" : {
+                  "stroke" : "#ed7145"
+               }
+            },
+            "text" : {
+               "name" : "966 (ModemManager)"
+            }
+         },
+         {
+            "connectors" : {
+               "style" : {
+                  "stroke" : "#352a03"
+               }
+            },
+            "text" : {
+               "name" : "968 (thermald)"
+            }
+         },
+         {
+            "connectors" : {
+               "style" : {
+                  "stroke" : "#45d92e"
+               }
+            },
+            "text" : {
+               "name" : "975 (systemd-logind)"
+            }
+         },
+         {
+            "connectors" : {
+               "style" : {
+                  "stroke" : "#8b8bb1"
+               }
+            },
+            "text" : {
+               "name" : "992 (rsyslogd)"
+            }
+         },
+         {
+            "connectors" : {
+               "style" : {
+                  "stroke" : "#99d4c3"
+               }
+            },
+            "text" : {
+               "name" : "993 (whoopsie)"
             }
          }
       ],
+      "connectors" : {
+         "style" : {
+            "stroke" : "#c65331"
+         }
+      },
       "text" : {
          "name" : "1 (systemd)"
       }
@@ -2039,7 +1080,7 @@ var simple_chart_config = {
    "processes" : [
       {
          "name" : "root",
-         "quantity" : 139
+         "quantity" : 138
       },
       {
          "name" : "daemon",
@@ -2055,7 +1096,7 @@ var simple_chart_config = {
       },
       {
          "name" : "vinihcampos",
-         "quantity" : 80
+         "quantity" : 70
       },
       {
          "name" : "systemd-network",
@@ -2206,6 +1247,6 @@ var simple_chart_config = {
          "quantity" : 0
       }
    ],
-   "totalProcesses" : 230
+   "totalProcesses" : 219
 }
 ;
